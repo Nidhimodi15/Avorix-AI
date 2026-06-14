@@ -47,11 +47,11 @@ export function Navbar() {
           { 'scrolled': isScrolled || isMobileMenuOpen }
         )}
       >
-        <div className="container-wide flex items-center justify-between">
+        <div className="container-wide flex items-center justify-between gap-10">
           <Logo />
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7 mx-auto">
             {NAV_LINKS.map((link) => {
               const isActive = location.pathname === link.href;
               return (
@@ -59,7 +59,7 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    'relative text-sm font-semibold tracking-wide transition-colors pb-0.5',
+                    'relative text-sm font-semibold tracking-wide transition-colors pb-0.5 whitespace-nowrap',
                     isActive
                       ? 'text-primary'
                       : 'text-text-secondary hover:text-primary'
@@ -81,7 +81,7 @@ export function Navbar() {
           </nav>
 
           {/* Actions */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             <ThemeToggle />
             <Link to="/demo">
               <Button variant="primary" size="sm">
