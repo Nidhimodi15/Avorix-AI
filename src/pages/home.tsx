@@ -6,7 +6,6 @@ import { MeetAIEmployee } from '@/components/home/meet-ai-employee';
 import { FeatureShowcase } from '@/components/home/feature-showcase';
 import { IndustrySolutions } from '@/components/home/industry-solutions';
 import { ResultsROI } from '@/components/home/results-roi';
-import { Testimonials } from '@/components/home/testimonials';
 import { PricingPreview } from '@/components/home/pricing-preview';
 import { FAQPreview } from '@/components/home/faq-preview';
 import { FinalCTA } from '@/components/home/final-cta';
@@ -21,7 +20,6 @@ export function HomePage() {
       <FeatureShowcase />
       <IndustrySolutions />
       <ResultsROI />
-      <Testimonials />
       <PricingPreview />
       <FAQPreview />
       <FinalCTA />

@@ -179,19 +179,19 @@ ul, ol {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
 .container-tight {
   max-width: 840px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
 .container-wide {
   max-width: 1720px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 20px;
 }
 
 .section {
@@ -210,10 +210,10 @@ ul, ol {
 
 @media (max-width: 768px) {
   .section {
-    padding: 48px 0;
+    padding: 40px 0;
   }
   .container, .container-tight, .container-wide {
-    padding: 0 16px;
+    padding: 0 12px;
   }
 }
 
@@ -899,10 +899,10 @@ ul, ol {
 
 .marquee-track {
   display: flex;
-  gap: 64px;
+  gap: 48px;
   align-items: center;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .marquee-track:hover {

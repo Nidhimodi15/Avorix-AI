@@ -1,63 +1,41 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { TRUSTED_COMPANIES } from '@/lib/constants';
 
 export function TrustedBy() {
-  // Duplicate 3× for a very smooth infinite loop
-  const items = [...TRUSTED_COMPANIES, ...TRUSTED_COMPANIES, ...TRUSTED_COMPANIES];
+  const doubled = [...TRUSTED_COMPANIES, ...TRUSTED_COMPANIES];
 
   return (
-    <section className="py-14 border-y border-border/50 overflow-hidden" style={{ background: 'var(--bg-surface)' }}>
-      <div className="container-wide mb-8">
-        <p className="text-center text-xs font-bold text-text-muted uppercase tracking-[0.18em]">
-          Trusted by innovative teams worldwide
-        </p>
-      </div>
+    <section className="py-10 border-b border-border/40 overflow-hidden" style={{ background: 'var(--bg)' }}>
+      <p className="text-center text-[11px] font-bold uppercase tracking-[0.2em] text-text-muted mb-7">
+        Trusted by innovative teams worldwide
+      </p>
 
-      {/* Marquee row 1 — left scroll */}
-      <div className="marquee-container mb-4">
-        <div className="marquee-track">
-          {items.map((company, index) => (
-            <div
-              key={`a-${company}-${index}`}
-              className="flex items-center justify-center px-2 opacity-40 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
-            >
-              <span
-                className="font-bold text-lg whitespace-nowrap"
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  color: 'var(--text-primary)',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                {company}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Marquee row 2 — right scroll (reversed) */}
+      {/* Single clean marquee row */}
       <div className="marquee-container">
-        <div
-          className="marquee-track"
-          style={{ animationDirection: 'reverse', animationDuration: '50s' }}
-        >
-          {[...items].reverse().map((company, index) => (
+        <div className="marquee-track">
+          {doubled.map((company, index) => (
             <div
-              key={`b-${company}-${index}`}
-              className="flex items-center justify-center px-2 opacity-25 hover:opacity-80 transition-all duration-300 grayscale hover:grayscale-0"
+              key={`${company}-${index}`}
+              className="flex items-center shrink-0"
             >
               <span
-                className="font-bold text-base whitespace-nowrap"
+                className="text-sm font-bold whitespace-nowrap transition-all duration-300 cursor-default px-5 py-2 rounded-full border border-transparent hover:border-border hover:bg-bg-surface"
                 style={{
-                  fontFamily: "'Inter', sans-serif",
-                  color: 'var(--text-secondary)',
+                  color: 'var(--text-muted)',
                   letterSpacing: '-0.01em',
+                  fontFamily: "'Inter', sans-serif",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)';
                 }}
               >
                 {company}
               </span>
+              {/* Dot separator */}
+              <span className="mx-3 w-1 h-1 rounded-full shrink-0" style={{ background: 'var(--border)' }} />
             </div>
           ))}
         </div>

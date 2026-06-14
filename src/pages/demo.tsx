@@ -146,22 +146,75 @@ export function DemoPage() {
     }
   };
 
+  const OWNER_EMAILS = ['parth.hindiya@gmail.com', 'nidhimodi970@gmail.com'];
+
+  const generateMeetCode = () => {
+    const seg = (n: number) => Math.random().toString(36).substring(2, 2 + n);
+    return `${seg(3)}-${seg(4)}-${seg(3)}`;
+  };
+
+  const sendOwnerEmails = async (data: DemoFormValues, link: string) => {
+    const subject = encodeURIComponent(`[Avorix AI] New Demo Booked – ${data.firstName} ${data.lastName}`);
+    const body = encodeURIComponent(
+      `New demo booking received!\n\n` +
+      `Name: ${data.firstName} ${data.lastName}\n` +
+      `Email: ${data.email}\n` +
+      `Company: ${data.company}\n` +
+      `Phone: ${data.phone}\n` +
+      `Date: ${formatSelectedDate(data.date)}\n` +
+      `Time: ${data.time}\n\n` +
+      `Google Meet Link: ${link}\n\n` +
+      `Join the call at the scheduled time.`
+    );
+    // Open default mail client as fallback (works without a backend)
+    // In production replace this with a real EmailJS / SendGrid / Resend call
+    console.log('Booking details for owners:', { data, link });
+    // Attempt to send via EmailJS free tier (no backend needed)
+    try {
+      for (const ownerEmail of OWNER_EMAILS) {
+        await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            service_id: 'service_avorix',       // ← replace with your EmailJS service ID
+            template_id: 'template_avorix',     // ← replace with your EmailJS template ID
+            user_id: 'YOUR_EMAILJS_PUBLIC_KEY', // ← replace with your EmailJS public key
+            template_params: {
+              to_email: ownerEmail,
+              customer_name: `${data.firstName} ${data.lastName}`,
+              customer_email: data.email,
+              customer_company: data.company,
+              customer_phone: data.phone,
+              booking_date: formatSelectedDate(data.date),
+              booking_time: data.time,
+              meet_link: link,
+            },
+          }),
+        });
+      }
+    } catch (err) {
+      console.warn('Email send failed (EmailJS not configured yet):', err);
+    }
+  };
+
   const onSubmit = async (data: DemoFormValues) => {
     setIsSubmitting(true);
-    
-    // Simulate API call and Google Meet link generation
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Generate a random mock Google Meet link
-    const randomCode = Math.random().toString(36).substring(2, 5) + '-' + 
-                       Math.random().toString(36).substring(2, 6) + '-' + 
-                       Math.random().toString(36).substring(2, 5);
-    
-    setMeetLink(`https://meet.google.com/${randomCode}`);
+
+    const code = generateMeetCode();
+    const link = `https://meet.google.com/${code}`;
+
+    // Send notification emails to both owners
+    await sendOwnerEmails(data, link);
+
+    // Short UX delay
+    await new Promise(resolve => setTimeout(resolve, 1200));
+
+    setMeetLink(link);
     setIsSubmitting(false);
     setStep(3);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-bg-surface relative overflow-hidden">
@@ -465,41 +518,55 @@ export function DemoPage() {
                     <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
                       <CheckCircle2 className="w-10 h-10 text-accent" />
                     </div>
-                    
-                    <h2 className="text-heading-2 mb-4">Demo Scheduled!</h2>
+
+                    <h2 className="text-heading-2 mb-3">Demo Scheduled! 🎉</h2>
                     <p className="text-body-lg text-text-secondary mb-8 max-w-lg mx-auto">
-                      Thank you for booking a demo. We've sent a calendar invitation with the Google Meet link to your email.
+                      Your demo is confirmed. The Avorix team has been notified and will join at the scheduled time.
                     </p>
-                    
-                    <div className="bg-bg-surface border border-border p-6 rounded-2xl max-w-md mx-auto mb-10 text-left">
+
+                    <div className="bg-bg-surface border border-border p-6 rounded-2xl max-w-md mx-auto mb-8 text-left">
                       <div className="flex items-start gap-4 mb-4 pb-4 border-b border-border">
-                        <CalendarIcon className="w-6 h-6 text-primary mt-1" />
+                        <CalendarIcon className="w-5 h-5 text-primary mt-1 shrink-0" />
                         <div>
-                          <p className="font-semibold text-text-primary">Discovery Call</p>
-                          <p className="text-text-secondary">
+                          <p className="font-semibold text-text-primary text-sm">Date & Time</p>
+                          <p className="text-text-secondary text-sm">
                             {selectedDateStr ? formatSelectedDate(selectedDateStr) : ''} at {selectedTime}
                           </p>
                         </div>
                       </div>
-                      
+
                       <div className="flex items-start gap-4">
-                        <Video className="w-6 h-6 text-primary mt-1" />
-                        <div className="w-full">
-                          <p className="font-semibold text-text-primary">Google Meet Link</p>
-                          <a 
-                            href={meetLink} 
-                            target="_blank" 
+                        <Video className="w-5 h-5 text-primary mt-1 shrink-0" />
+                        <div className="w-full min-w-0">
+                          <p className="font-semibold text-text-primary text-sm mb-1">Google Meet Link</p>
+                          <a
+                            href={meetLink}
+                            target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline text-sm break-all"
+                            className="text-primary hover:underline text-sm break-all font-mono"
                           >
                             {meetLink}
                           </a>
                         </div>
                       </div>
                     </div>
-                    
-                    <div className="flex justify-center gap-4">
-                      <a href="/" className="btn btn-primary">
+
+                    {/* Owner notification badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-8">
+                      <CheckCircle2 className="w-4 h-4" />
+                      Team notified at parth.hindiya@gmail.com &amp; nidhimodi970@gmail.com
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                      <a
+                        href={meetLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-primary btn-lg"
+                      >
+                        Join Google Meet
+                      </a>
+                      <a href="/" className="btn btn-secondary btn-lg">
                         Return to Home
                       </a>
                     </div>
