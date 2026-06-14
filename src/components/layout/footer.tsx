@@ -10,6 +10,14 @@ export function Footer() {
 
   return (
     <footer className="footer">
+      {/* Gradient glow strip at top */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{
+          background: 'linear-gradient(90deg, transparent 0%, var(--primary) 30%, var(--accent) 70%, transparent 100%)',
+          boxShadow: '0 0 20px rgba(37,99,235,0.5)',
+        }}
+      />
       <div className="container-wide">
         <div className="footer-grid">
           {/* Brand Column */}
@@ -18,17 +26,24 @@ export function Footer() {
             <p className="text-body text-text-secondary max-w-sm">
               {SITE_CONFIG.description}
             </p>
-            <div className="flex items-center gap-4 mt-2">
-              <a href={SITE_CONFIG.social.twitter} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-bg-surface hover:bg-primary hover:text-white transition-colors text-text-secondary">
-                <MessageCircle className="w-5 h-5" />
+            <div className="flex items-center gap-3 mt-2">
+              <a href={SITE_CONFIG.social.twitter} target="_blank" rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-[#1DA1F2] hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
+                title="Twitter">
+                <MessageCircle className="w-4 h-4" />
                 <span className="sr-only">Twitter</span>
               </a>
-              <a href={SITE_CONFIG.social.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-bg-surface hover:bg-primary hover:text-white transition-colors text-text-secondary">
-                <Globe className="w-5 h-5" />
+              <a href={SITE_CONFIG.social.linkedin} target="_blank" rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-[#0077B5] hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
+                title="LinkedIn">
+                <Globe className="w-4 h-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-bg-surface hover:bg-primary hover:text-white transition-colors text-text-secondary">
-                <Share2 className="w-5 h-5" />
+              <a href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-gradient-to-r hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
+                style={{}}
+                title="Instagram">
+                <Share2 className="w-4 h-4" />
                 <span className="sr-only">Instagram</span>
               </a>
             </div>

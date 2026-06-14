@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './components/theme-provider';
+import { CustomCursor } from './components/shared/custom-cursor';
 import { Navbar } from './components/layout/navbar';
 import { Footer } from './components/layout/footer';
 import { HomePage } from './pages/home';
@@ -33,9 +34,10 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="avorix-theme">
       <BrowserRouter>
         <ScrollToTop />
+        <CustomCursor />
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-1">
+          <main className="flex-1 page-transition">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/features" element={<FeaturesPage />} />

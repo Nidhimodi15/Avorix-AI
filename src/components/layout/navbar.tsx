@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Logo } from '../shared/logo';
 import { ThemeToggle } from '../shared/theme-toggle';
@@ -51,20 +52,32 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={cn(
-                  'text-sm font-semibold tracking-wide transition-colors',
-                  location.pathname === link.href
-                    ? 'text-primary'
-                    : 'text-text-secondary hover:text-primary'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={cn(
+                    'relative text-sm font-semibold tracking-wide transition-colors pb-0.5',
+                    isActive
+                      ? 'text-primary'
+                      : 'text-text-secondary hover:text-primary'
+                  )}
+                >
+                  {link.label}
+                  {/* Animated active underline */}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                      style={{ background: 'var(--primary)' }}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Actions */}

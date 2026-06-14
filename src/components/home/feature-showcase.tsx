@@ -47,16 +47,20 @@ export function FeatureShowcase() {
                   )}
                   
                   <div className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors",
-                    isActive ? "bg-primary text-white" : "bg-bg-surface text-text-muted group-hover:text-primary"
-                  )}>
-                    <Icon className="w-6 h-6" />
+                    "w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300",
+                    isActive
+                      ? "bg-primary text-white scale-110 shadow-lg"
+                      : "bg-bg-surface text-text-muted group-hover:text-primary group-hover:scale-110 group-hover:bg-primary/10"
+                  )}
+                  style={isActive ? { boxShadow: '0 0 20px rgba(37,99,235,0.4)' } : {}}
+                  >
+                    <Icon className="w-6 h-6 transition-transform duration-300 group-hover:rotate-3" />
                   </div>
                   
                   <div>
                     <h4 className={cn(
                       "text-heading-4 mb-1 transition-colors",
-                      isActive ? "text-primary" : "text-text-primary"
+                      isActive ? "text-primary" : "text-text-primary group-hover:text-primary"
                     )}>
                       {feature.title}
                     </h4>

@@ -1,126 +1,93 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
 import { SectionHeading } from '../shared/section-heading';
 import { testimonials } from '@/data/testimonials';
-import { cn } from '@/lib/utils';
+import { staggerContainer, staggerItem } from '@/lib/animations';
+
+// Color palette for avatar gradients
+const GRADIENTS = [
+  'linear-gradient(135deg, #2563EB, #7C3AED)',
+  'linear-gradient(135deg, #10B981, #0EA5E9)',
+  'linear-gradient(135deg, #F59E0B, #EF4444)',
+  'linear-gradient(135deg, #8B5CF6, #EC4899)',
+  'linear-gradient(135deg, #06B6D4, #3B82F6)',
+  'linear-gradient(135deg, #14B8A6, #10B981)',
+];
 
 export function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-
-  const next = () => {
-    setDirection(1);
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prev = () => {
-    setDirection(-1);
-    setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
-
-  // Auto-advance
-  useEffect(() => {
-    const timer = setInterval(next, 8000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
-  };
-
   return (
-    <section className="section bg-bg-surface overflow-hidden">
-      <div className="container">
+    <section className="section overflow-hidden" style={{ background: 'var(--bg-section)' }}>
+      <div className="container-wide">
         <SectionHeading
           badge="Success Stories"
-          title="Don't just take our word for it"
-          description="See how businesses across industries are using Avorix AI to drive growth and save time."
+          title="Loved by teams worldwide"
+          description="Businesses across every industry trust Avorix AI to drive growth and delight customers."
         />
 
-        <div className="relative max-w-4xl mx-auto h-[400px] md:h-[300px]">
-          <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4"
+        >
+          {testimonials.map((t, index) => (
             <motion.div
-              key={currentIndex}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
+              key={t.id}
+              variants={staggerItem}
+              className="group relative flex flex-col bg-bg-card border border-border rounded-2xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              style={{
+                // Subtle top accent glow on hover via CSS variable trick
               }}
-              className="absolute inset-0 w-full"
             >
-              <div className="glass-card h-full p-8 md:p-12 rounded-[2rem] border-white/20 dark:border-white/5 flex flex-col justify-center items-center text-center relative shadow-xl">
-                <Quote className="absolute top-8 left-8 w-12 h-12 text-primary/10 -scale-x-100" />
-                
-                <p className="text-body-xl md:text-heading-4 font-medium text-text-primary mb-8 relative z-10 max-w-3xl">
-                  "{testimonials[currentIndex].text}"
-                </p>
-                
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-glow">
-                    {testimonials[currentIndex].initials}
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-semibold text-text-primary">{testimonials[currentIndex].name}</h4>
-                    <p className="text-sm text-text-secondary">{testimonials[currentIndex].role}</p>
-                  </div>
+              {/* Top accent line */}
+              <div
+                className="absolute top-0 left-6 right-6 h-0.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: GRADIENTS[index % GRADIENTS.length] }}
+              />
+
+              {/* Stars */}
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4"
+                    style={{ color: '#F59E0B', fill: '#F59E0B' }}
+                  />
+                ))}
+              </div>
+
+              {/* Quote text */}
+              <p className="text-body text-text-secondary leading-relaxed flex-1 mb-6">
+                "{t.text}"
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-4 border-t border-border">
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-white font-bold text-base shrink-0 shadow-md"
+                  style={{ background: GRADIENTS[index % GRADIENTS.length] }}
+                >
+                  {t.initials}
                 </div>
+                <div>
+                  <p className="font-semibold text-sm text-text-primary">{t.name}</p>
+                  <p className="text-xs text-text-muted">{t.role}</p>
+                </div>
+                <span
+                  className="ml-auto text-xs font-semibold px-3 py-1 rounded-full"
+                  style={{
+                    background: 'var(--primary-light)',
+                    color: 'var(--primary)',
+                  }}
+                >
+                  {t.industry}
+                </span>
               </div>
             </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Buttons */}
-          <button 
-            onClick={prev}
-            className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-12 w-12 h-12 rounded-full bg-bg shadow-md border border-border flex items-center justify-center text-text-secondary hover:text-primary transition-colors z-10"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          
-          <button 
-            onClick={next}
-            className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-12 w-12 h-12 rounded-full bg-bg shadow-md border border-border flex items-center justify-center text-text-secondary hover:text-primary transition-colors z-10"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          {/* Pagination Dots */}
-          <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setDirection(index > currentIndex ? 1 : -1);
-                  setCurrentIndex(index);
-                }}
-                className={cn(
-                  "w-2.5 h-2.5 rounded-full transition-all duration-300",
-                  index === currentIndex ? "bg-primary w-8" : "bg-border hover:bg-text-muted"
-                )}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
