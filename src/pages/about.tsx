@@ -1,0 +1,170 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Target, Heart, Shield, Zap } from 'lucide-react';
+import { SectionHeading } from '@/components/shared/section-heading';
+import { CTABanner } from '@/components/shared/cta-banner';
+import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
+
+const values = [
+  {
+    icon: Target,
+    title: 'Customer First',
+    description: 'We build technology that serves the end customer just as much as the business using it.'
+  },
+  {
+    icon: Zap,
+    title: 'Speed is a Feature',
+    description: 'In today\'s world, delayed responses mean lost revenue. We engineer for instant interactions.'
+  },
+  {
+    icon: Shield,
+    title: 'Trust & Privacy',
+    description: 'We treat our clients\' data, and their customers\' data, with the highest level of security.'
+  },
+  {
+    icon: Heart,
+    title: 'Human-Centric AI',
+    description: 'We believe AI should empower humans, taking over repetitive tasks so people can focus on meaningful work.'
+  }
+];
+
+// Placeholder team data since no real data was provided
+const team = [
+  { name: 'Alex Rivera', role: 'CEO & Co-founder', initials: 'AR' },
+  { name: 'Sarah Chen', role: 'CTO & Co-founder', initials: 'SC' },
+  { name: 'Marcus Johnson', role: 'Head of Product', initials: 'MJ' },
+  { name: 'Elena Rodriguez', role: 'Head of Customer Success', initials: 'ER' },
+  { name: 'David Kim', role: 'Lead AI Engineer', initials: 'DK' },
+  { name: 'Priya Patel', role: 'Head of Marketing', initials: 'PP' }
+];
+
+export function AboutPage() {
+  return (
+    <div className="pt-32 flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="section pb-12 relative overflow-hidden text-center">
+        <div className="absolute inset-0 bg-gradient-hero -z-10" />
+        <div className="container-tight relative z-10">
+          <motion.div variants={fadeUp} initial="hidden" animate="visible">
+            <h1 className="text-display-lg mb-6">
+              Building the future of <span className="text-gradient">customer communication.</span>
+            </h1>
+            <p className="text-body-xl text-text-secondary">
+              We're on a mission to help businesses of all sizes provide enterprise-grade customer experiences through the world's most popular messaging app.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-20 bg-bg-section border-y border-border/50">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-heading-2 mb-6">Our Story</h2>
+              <div className="space-y-4 text-body-lg text-text-secondary">
+                <p>
+                  Avorix AI was born out of a simple frustration: why is it so hard for businesses to reply quickly to their customers on WhatsApp?
+                </p>
+                <p>
+                  We saw local businesses losing leads because they couldn't respond after 5 PM. We saw customer support teams drowning in repetitive queries. We knew there had to be a better way.
+                </p>
+                <p>
+                  So we built an AI employee specifically for WhatsApp. Not a rigid, rule-based chatbot that frustrates users, but a dynamic, intelligent system that understands context, takes actions, and knows exactly when to hand off to a human.
+                </p>
+                <p className="font-semibold text-text-primary">
+                  Today, Avorix AI powers millions of conversations for hundreds of businesses globally.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="relative h-[400px] rounded-3xl overflow-hidden bg-bg border border-border flex items-center justify-center p-12"
+            >
+              <div className="absolute inset-0 bg-grid opacity-30" />
+              <div className="relative z-10 text-center">
+                <div className="text-display-xl font-bold text-primary mb-2">5M+</div>
+                <p className="text-heading-4 text-text-secondary">Conversations Automated</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="section">
+        <div className="container-wide">
+          <SectionHeading
+            title="Our Values"
+            description="The core principles that guide how we build our product and serve our customers."
+          />
+          
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {values.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <motion.div key={index} variants={staggerItem} className="card h-full">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-heading-4 mb-3">{value.title}</h3>
+                  <p className="text-body-sm text-text-secondary">
+                    {value.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="section bg-bg-section border-y border-border/50">
+        <div className="container-wide">
+          <SectionHeading
+            title="Meet the Team"
+            description="Built by a team of ex-founders, AI researchers, and customer experience experts."
+          />
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {team.map((member, index) => (
+              <motion.div 
+                key={index}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-32 h-32 mx-auto rounded-full bg-bg border border-border flex items-center justify-center mb-4 shadow-sm relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-accent/5" />
+                  <span className="text-2xl font-bold text-text-muted">{member.initials}</span>
+                </div>
+                <h4 className="font-semibold text-text-primary">{member.name}</h4>
+                <p className="text-sm text-text-secondary">{member.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABanner />
+    </div>
+  );
+}
