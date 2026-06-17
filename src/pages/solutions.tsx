@@ -26,7 +26,7 @@ const solutions = [
     icon: TrendingUp,
     title: 'Sales & Lead Gen',
     subtitle: 'Capture and qualify leads on autopilot',
-    description: 'Stop losing leads who contact you after hours. Avorix AI engages prospects instantly, qualifies them based on your criteria, and routes hot leads to your sales team.',
+    description: 'Stop losing leads who contact you after hours. Aeviq AI engages prospects instantly, qualifies them based on your criteria, and routes hot leads to your sales team.',
     benefits: [
       '24/7 lead capture',
       'Automated qualification scoring',
@@ -63,7 +63,7 @@ export function SolutionsPage() {
               Solutions for every <span className="text-gradient">department.</span>
             </h1>
             <p className="text-body-xl text-text-secondary">
-              Whether you want to automate support, drive sales, or run marketing campaigns, Avorix AI has you covered.
+              Whether you want to automate support, drive sales, or run marketing campaigns, Aeviq AI has you covered.
             </p>
           </motion.div>
         </div>

@@ -1,7 +1,7 @@
 export const testimonials = [
   {
     id: 1,
-    text: "Avorix AI transformed how we handle patient inquiries. Our appointment booking rate increased by 70% and our front desk team can now focus on in-person patients. It's like having an extra employee who never takes a day off.",
+    text: "Aeviq AI transformed how we handle patient inquiries. Our appointment booking rate increased by 70% and our front desk team can now focus on in-person patients. It's like having an extra employee who never takes a day off.",
     name: 'Dr. Sarah Mitchell',
     role: 'Director, Meridian Health Clinic',
     initials: 'SM',
@@ -9,7 +9,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    text: "We were losing leads because we couldn't respond fast enough on WhatsApp. Since implementing Avorix AI, our response time went from hours to seconds, and our conversion rate has tripled. The ROI was visible within the first week.",
+    text: "We were losing leads because we couldn't respond fast enough on WhatsApp. Since implementing Aeviq AI, our response time went from hours to seconds, and our conversion rate has tripled. The ROI was visible within the first week.",
     name: 'James Rodriguez',
     role: 'CEO, Pinnacle Real Estate',
     initials: 'JR',
@@ -25,7 +25,7 @@ export const testimonials = [
   },
   {
     id: 4,
-    text: "Managing appointment bookings across 12 salon locations was a nightmare. Avorix AI handles it all—booking, rescheduling, reminders. Our no-show rate dropped by 50%. I wish we had found this sooner.",
+    text: "Managing appointment bookings across 12 salon locations was a nightmare. Aeviq AI handles it all—booking, rescheduling, reminders. Our no-show rate dropped by 50%. I wish we had found this sooner.",
     name: 'Claire Bennett',
     role: 'Founder, Luxe Salon Group',
     initials: 'CB',
@@ -33,7 +33,7 @@ export const testimonials = [
   },
   {
     id: 5,
-    text: "The lead qualification feature is incredibly powerful. Our sales team now only speaks with pre-qualified prospects, which has cut our sales cycle in half. Avorix AI isn't just automation—it's a competitive advantage.",
+    text: "The lead qualification feature is incredibly powerful. Our sales team now only speaks with pre-qualified prospects, which has cut our sales cycle in half. Aeviq AI isn't just automation—it's a competitive advantage.",
     name: 'Michael Chen',
     role: 'VP of Sales, NovaCraft Studios',
     initials: 'MC',
@@ -41,7 +41,7 @@ export const testimonials = [
   },
   {
     id: 6,
-    text: "We handle over 500 customer queries daily. Avorix AI resolves 80% of them instantly. Our support team is happier, our customers are happier, and our costs dropped by 60%. It's the best investment we've made.",
+    text: "We handle over 500 customer queries daily. Aeviq AI resolves 80% of them instantly. Our support team is happier, our customers are happier, and our costs dropped by 60%. It's the best investment we've made.",
     name: 'Amara Okafor',
     role: 'Customer Success Lead, SwiftLogix',
     initials: 'AO',

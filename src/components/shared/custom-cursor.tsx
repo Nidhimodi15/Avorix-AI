@@ -6,7 +6,15 @@ export function CustomCursor() {
   const [visible, setVisible] = useState(false);
   const [clicking, setClicking] = useState(false);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    // Disable custom cursor on touch/mobile devices
+    if (window.matchMedia("(any-pointer: coarse)").matches) {
+      setIsMobile(true);
+      return;
+    }
+
     let ringX = 0, ringY = 0;
     let dotX = 0, dotY = 0;
     let animId: number;
@@ -45,7 +53,7 @@ export function CustomCursor() {
     };
   }, [visible]);
 
-  if (typeof window === 'undefined') return null;
+  if (typeof window === 'undefined' || isMobile) return null;
 
   return (
     <>

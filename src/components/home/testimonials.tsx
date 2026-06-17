@@ -22,7 +22,7 @@ export function Testimonials() {
         <SectionHeading
           badge="Success Stories"
           title="Loved by teams worldwide"
-          description="Businesses across every industry trust Avorix AI to drive growth and delight customers."
+          description="Businesses across every industry trust Aeviq AI to drive growth and delight customers."
         />
 
         <motion.div

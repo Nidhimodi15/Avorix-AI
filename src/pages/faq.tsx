@@ -47,7 +47,7 @@ export function FAQPage() {
               Frequently asked <span className="text-gradient">questions.</span>
             </h1>
             <p className="text-body-xl text-text-secondary mb-10">
-              Everything you need to know about Avorix AI, billing, and technical integration.
+              Everything you need to know about Aeviq AI, billing, and technical integration.
             </p>
 
             {/* Search Bar */}

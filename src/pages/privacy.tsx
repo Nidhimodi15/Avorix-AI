@@ -30,7 +30,7 @@ export function PrivacyPage() {
           <div className="bg-bg-surface border border-border rounded-2xl p-8 md:p-12 mb-12">
             <h2 className="text-heading-3 text-text-primary mt-0 mb-6">1. Introduction</h2>
             <p className="mb-6">
-              At Avorix AI, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our application. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+              At Aeviq AI, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our application. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
             </p>
             <p className="mb-8">
               We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the "Last Updated" date of this Privacy Policy.
@@ -67,7 +67,7 @@ export function PrivacyPage() {
             <h2 className="text-heading-3 text-text-primary mb-6">6. Contact Us</h2>
             <p>
               If you have questions or comments about this Privacy Policy, please contact us at: <br/>
-              <a href="mailto:privacy@avorix.ai" className="text-primary hover:underline">privacy@avorix.ai</a>
+              <a href="mailto:privacy@aeviq.ai" className="text-primary hover:underline">privacy@aeviq.ai</a>
             </p>
           </div>
         </motion.div>

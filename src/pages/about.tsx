@@ -28,14 +28,10 @@ const values = [
   }
 ];
 
-// Placeholder team data since no real data was provided
+// Founders
 const team = [
-  { name: 'Alex Rivera', role: 'CEO & Co-founder', initials: 'AR' },
-  { name: 'Sarah Chen', role: 'CTO & Co-founder', initials: 'SC' },
-  { name: 'Marcus Johnson', role: 'Head of Product', initials: 'MJ' },
-  { name: 'Elena Rodriguez', role: 'Head of Customer Success', initials: 'ER' },
-  { name: 'David Kim', role: 'Lead AI Engineer', initials: 'DK' },
-  { name: 'Priya Patel', role: 'Head of Marketing', initials: 'PP' }
+  { name: 'Nidhi Modi', role: 'Co-founder', initials: 'NM' },
+  { name: 'Parth Hindiya', role: 'Co-founder', initials: 'PH' }
 ];
 
 export function AboutPage() {
@@ -69,7 +65,7 @@ export function AboutPage() {
               <h2 className="text-heading-2 mb-6">Our Story</h2>
               <div className="space-y-4 text-body-lg text-text-secondary">
                 <p>
-                  Avorix AI was born out of a simple frustration: why is it so hard for businesses to reply quickly to their customers on WhatsApp?
+                  Aeviq AI was born out of a simple frustration: why is it so hard for businesses to reply quickly to their customers on WhatsApp?
                 </p>
                 <p>
                   We saw local businesses losing leads because they couldn't respond after 5 PM. We saw customer support teams drowning in repetitive queries. We knew there had to be a better way.
@@ -78,7 +74,7 @@ export function AboutPage() {
                   So we built an AI employee specifically for WhatsApp. Not a rigid, rule-based chatbot that frustrates users, but a dynamic, intelligent system that understands context, takes actions, and knows exactly when to hand off to a human.
                 </p>
                 <p className="font-semibold text-text-primary">
-                  Today, Avorix AI powers millions of conversations for hundreds of businesses globally.
+                  Today, Aeviq AI powers millions of conversations for hundreds of businesses globally.
                 </p>
               </div>
             </motion.div>
@@ -137,11 +133,11 @@ export function AboutPage() {
       <section className="section bg-bg-section border-y border-border/50">
         <div className="container-wide">
           <SectionHeading
-            title="Meet the Team"
-            description="Built by a team of ex-founders, AI researchers, and customer experience experts."
+            title="Meet the Founders"
+            description="Aeviq AI is built by passionate founders solving real problems."
           />
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="flex justify-center gap-16">
             {team.map((member, index) => (
               <motion.div 
                 key={index}
@@ -149,14 +145,14 @@ export function AboutPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.15 }}
                 className="text-center"
               >
-                <div className="w-32 h-32 mx-auto rounded-full bg-bg border border-border flex items-center justify-center mb-4 shadow-sm relative overflow-hidden">
+                <div className="w-36 h-36 mx-auto rounded-full bg-bg border border-border flex items-center justify-center mb-5 shadow-sm relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-accent/5" />
-                  <span className="text-2xl font-bold text-text-muted">{member.initials}</span>
+                  <span className="text-3xl font-bold text-text-muted">{member.initials}</span>
                 </div>
-                <h4 className="font-semibold text-text-primary">{member.name}</h4>
+                <h4 className="text-lg font-semibold text-text-primary">{member.name}</h4>
                 <p className="text-sm text-text-secondary">{member.role}</p>
               </motion.div>
             ))}

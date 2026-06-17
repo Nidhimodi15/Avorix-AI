@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Send, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -29,13 +29,19 @@ export function ContactPage() {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+    } catch (err) {
+      console.warn('Backend email send failed:', err);
+    }
     setIsSubmitting(false);
     setIsSuccess(true);
     reset();
     
-    // Reset success message after 5 seconds
     setTimeout(() => {
       setIsSuccess(false);
     }, 5000);
@@ -58,7 +64,7 @@ export function ContactPage() {
             Get in <span className="text-primary">touch.</span>
           </h1>
           <p className="text-body-xl text-text-secondary">
-            Have questions about Avorix AI? Our team is ready to help. Fill out the form below or reach out directly.
+            Have questions about Aeviq AI? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </motion.div>
 
@@ -69,52 +75,78 @@ export function ContactPage() {
             variants={fadeRight}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-5 flex flex-col gap-8"
+            className="lg:col-span-5 flex flex-col gap-6"
           >
-            <div className="card h-full flex flex-col justify-center">
+            {/* Email Card */}
+            <div className="card flex flex-col">
               <h3 className="text-heading-3 mb-8">Contact Information</h3>
               
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-text-primary mb-1">Email Us</h4>
-                    <p className="text-text-secondary mb-1">We'll respond within 24 hours.</p>
-                    <a href={`mailto:${SITE_CONFIG.email}`} className="text-primary hover:underline font-medium">
-                      {SITE_CONFIG.email}
-                    </a>
-                  </div>
+              <div className="flex items-start gap-4 mb-8">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-6 h-6 text-primary" />
                 </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-text-primary mb-1">Call Us</h4>
-                    <p className="text-text-secondary mb-1">Mon-Fri from 9am to 6pm EST.</p>
-                    <a href={`tel:${SITE_CONFIG.phone}`} className="text-primary hover:underline font-medium">
-                      {SITE_CONFIG.phone}
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-blue-500" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-text-primary mb-1">Visit Us</h4>
-                    <p className="text-text-secondary">
-                      100 Innovation Drive<br />
-                      Suite 400<br />
-                      San Francisco, CA 94103
-                    </p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-text-primary mb-1">Email Us</h4>
+                  <p className="text-text-secondary mb-1">We'll respond within 24 hours.</p>
+                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-primary hover:underline font-medium">
+                    {SITE_CONFIG.email}
+                  </a>
                 </div>
               </div>
+
+              {/* Quick response promise */}
+              <div className="mt-auto rounded-2xl bg-gradient-to-br from-bg-section to-bg-section/50 border border-border/50 p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Sparkles className="w-5 h-5 text-primary" />
+                  <span className="font-semibold text-text-primary text-sm">Fast Response Guarantee</span>
+                </div>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  Our team typically responds within a few hours during business days. For urgent matters, mention it in your subject line.
+                </p>
+              </div>
+            </div>
+
+            {/* Founder Direct Email Cards */}
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-text-muted uppercase tracking-widest px-1">Reach the Founders Directly</h4>
+              
+              {/* Nidhi */}
+              <a 
+                href="mailto:nidhimodi970@gmail.com" 
+                className="card flex items-center gap-5 group hover:border-primary/50 transition-all duration-300 cursor-pointer !p-5"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  NM
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-text-primary">Nidhi Modi</h4>
+                  <p className="text-xs text-text-muted font-medium">Co-Founder</p>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
+                  <Mail className="w-4 h-4" />
+                  <span className="hidden sm:inline">nidhimodi970@gmail.com</span>
+                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                </div>
+              </a>
+
+              {/* Parth */}
+              <a 
+                href="mailto:parth.hindiya@gmail.com" 
+                className="card flex items-center gap-5 group hover:border-accent/50 transition-all duration-300 cursor-pointer !p-5"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-accent to-primary flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  PH
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-text-primary">Parth Hindiya</h4>
+                  <p className="text-xs text-text-muted font-medium">Co-Founder</p>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
+                  <Mail className="w-4 h-4" />
+                  <span className="hidden sm:inline">parth.hindiya@gmail.com</span>
+                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+                </div>
+              </a>
             </div>
           </motion.div>
 
@@ -211,74 +243,6 @@ export function ContactPage() {
             </div>
           </motion.div>
         </div>
-
-        {/* Founders / Startup Owners Section */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="max-w-6xl mx-auto w-full mt-24"
-        >
-          <div className="text-center mb-12">
-            <h2 className="text-heading-2 mb-4">Direct Contact with Founders</h2>
-            <p className="text-body-lg text-text-secondary max-w-2xl mx-auto">
-              Want to discuss strategic partnerships, enterprise integrations, or investment opportunities? Reach out directly to our founders.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Owner 1: Nidhi Modi */}
-            <div className="card flex flex-col md:flex-row items-center md:items-start gap-6 relative overflow-hidden group hover:border-primary transition-all duration-300">
-              <div className="absolute top-0 right-0 bg-primary/10 text-primary text-xs font-semibold px-4 py-1.5 rounded-bl-xl">
-                Co-Founder & CEO
-              </div>
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                NM
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-heading-3 mb-2">Nidhi Modi</h3>
-                <p className="text-sm font-semibold text-text-muted mb-4">Startup Owner</p>
-                
-                <div className="space-y-2.5">
-                  <a href="mailto:nidhimodi970@gmail.com" className="flex items-center justify-center md:justify-start gap-2.5 text-text-secondary hover:text-primary transition-colors text-sm">
-                    <Mail className="w-4 h-4 text-primary" />
-                    nidhimodi970@gmail.com
-                  </a>
-                  <a href="tel:8490901517" className="flex items-center justify-center md:justify-start gap-2.5 text-text-secondary hover:text-accent transition-colors text-sm">
-                    <Phone className="w-4 h-4 text-accent" />
-                    +91 84909 01517
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Owner 2: Parth Hindiya */}
-            <div className="card flex flex-col md:flex-row items-center md:items-start gap-6 relative overflow-hidden group hover:border-accent transition-all duration-300">
-              <div className="absolute top-0 right-0 bg-accent/10 text-accent text-xs font-semibold px-4 py-1.5 rounded-bl-xl">
-                Co-Founder & CTO
-              </div>
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-accent to-primary flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                PH
-              </div>
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-heading-3 mb-2">Parth Hindiya</h3>
-                <p className="text-sm font-semibold text-text-muted mb-4">Startup Owner</p>
-                
-                <div className="space-y-2.5">
-                  <a href="mailto:parth.hindiya@gmail.com" className="flex items-center justify-center md:justify-start gap-2.5 text-text-secondary hover:text-primary transition-colors text-sm">
-                    <Mail className="w-4 h-4 text-primary" />
-                    parth.hindiya@gmail.com
-                  </a>
-                  <a href="tel:9664713124" className="flex items-center justify-center md:justify-start gap-2.5 text-text-secondary hover:text-accent transition-colors text-sm">
-                    <Phone className="w-4 h-4 text-accent" />
-                    +91 96647 13124
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

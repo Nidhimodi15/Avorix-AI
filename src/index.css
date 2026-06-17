@@ -177,25 +177,25 @@ ul, ol {
 /* ===== Layout Utilities ===== */
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .container-tight {
   max-width: 840px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .container-wide {
-  max-width: 1720px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .section {
-  padding: 72px 0;
+  padding: 80px 0;
 }
 
 .section-alt {
@@ -210,10 +210,10 @@ ul, ol {
 
 @media (max-width: 768px) {
   .section {
-    padding: 40px 0;
+    padding: 48px 0;
   }
   .container, .container-tight, .container-wide {
-    padding: 0 12px;
+    padding: 0 20px;
   }
 }
 
@@ -988,22 +988,7 @@ ul, ol {
   background: linear-gradient(135deg, rgba(59,130,246,0.06) 0%, var(--bg-card) 50%);
 }
 
-.pricing-card.featured::before {
-  content: '✦ Most Popular';
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, var(--primary), #7C3AED);
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  padding: 5px 20px;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-}
+
 
 .pricing-price {
   font-family: 'Inter', sans-serif;

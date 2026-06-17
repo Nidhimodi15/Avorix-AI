@@ -9,16 +9,16 @@ export const NAV_LINKS = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'Avorix AI',
+  name: 'Aeviq AI',
   tagline: 'Your 24/7 AI Employee on WhatsApp',
-  description: 'Avorix AI helps businesses instantly respond to customers, capture leads, automate support, and drive growth through WhatsApp.',
-  url: 'https://avorix.ai',
-  email: 'hello@avorix.ai',
+  description: 'Aeviq AI helps businesses instantly respond to customers, capture leads, automate support, and drive growth through WhatsApp.',
+  url: 'https://aeviq.ai',
+  email: 'hello@aeviq.ai',
   phone: '+1 (555) 000-0000',
   social: {
-    twitter: 'https://twitter.com/avorixai',
-    linkedin: 'https://linkedin.com/company/avorix-ai',
-    instagram: 'https://instagram.com/avorixai',
+    twitter: 'https://twitter.com/aeviqai',
+    linkedin: 'https://linkedin.com/company/aeviq-ai',
+    instagram: 'https://instagram.com/aeviqai',
   },
 };
 

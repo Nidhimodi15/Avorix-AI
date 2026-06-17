@@ -31,7 +31,7 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="avorix-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="aeviq-theme">
       <BrowserRouter>
         <ScrollToTop />
         <CustomCursor />

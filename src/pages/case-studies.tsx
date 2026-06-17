@@ -12,7 +12,7 @@ const caseStudies = [
     industry: 'Healthcare',
     logo: 'MH',
     title: 'How Meridian Health cut patient wait times by 85%',
-    description: 'By implementing Avorix AI to handle routine appointment booking and FAQs, Meridian Health freed up their reception staff to focus on high-priority patient care.',
+    description: 'By implementing Aeviq AI to handle routine appointment booking and FAQs, Meridian Health freed up their reception staff to focus on high-priority patient care.',
     metrics: [
       { label: 'Reduction in wait time', value: '85%' },
       { label: 'Appointments booked via AI', value: '4,200+' },
@@ -26,7 +26,7 @@ const caseStudies = [
     industry: 'Real Estate',
     logo: 'AR',
     title: 'Doubling lead conversion rates with instant WhatsApp follow-ups',
-    description: 'Apex Real Estate stopped losing leads to competitors by using Avorix AI to instantly engage inquiries, qualify budgets, and schedule viewings 24/7.',
+    description: 'Apex Real Estate stopped losing leads to competitors by using Aeviq AI to instantly engage inquiries, qualify budgets, and schedule viewings 24/7.',
     metrics: [
       { label: 'Increase in conversions', value: '114%' },
       { label: 'Average response time', value: '< 2s' },
@@ -62,7 +62,7 @@ export function CaseStudiesPage() {
               Real businesses. <span className="text-gradient">Real results.</span>
             </h1>
             <p className="text-body-xl text-text-secondary">
-              See how companies across industries are transforming their customer communication and driving revenue with Avorix AI.
+              See how companies across industries are transforming their customer communication and driving revenue with Aeviq AI.
             </p>
           </motion.div>
         </div>

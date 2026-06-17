@@ -67,7 +67,7 @@ export const pricingPlans = [
 
 export const pricingFAQ = [
   {
-    question: 'Can I try Avorix AI for free?',
+    question: 'Can I try Aeviq AI for free?',
     answer: 'Yes! Both our Starter and Professional plans come with a 14-day free trial. No credit card required. You\'ll have full access to all features during the trial period.',
   },
   {

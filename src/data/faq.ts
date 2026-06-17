@@ -3,20 +3,20 @@ export const faqData = [
     category: 'General',
     questions: [
       {
-        question: 'What is Avorix AI?',
-        answer: 'Avorix AI is an AI-powered employee that works inside WhatsApp. It handles customer conversations, captures leads, books appointments, provides support, and drives growth for your business—24 hours a day, 7 days a week.',
+        question: 'What is Aeviq AI?',
+        answer: 'Aeviq AI is an AI-powered employee that works inside WhatsApp. It handles customer conversations, captures leads, books appointments, provides support, and drives growth for your business—24 hours a day, 7 days a week.',
       },
       {
-        question: 'Is Avorix AI a chatbot?',
-        answer: 'No. Avorix AI is much more than a traditional chatbot. It\'s an intelligent AI employee that understands context, learns from your business data, qualifies leads, books appointments, and seamlessly hands off to your team when needed. Think of it as a team member, not a bot.',
+        question: 'Is Aeviq AI a chatbot?',
+        answer: 'No. Aeviq AI is much more than a traditional chatbot. It\'s an intelligent AI employee that understands context, learns from your business data, qualifies leads, books appointments, and seamlessly hands off to your team when needed. Think of it as a team member, not a bot.',
       },
       {
-        question: 'How is Avorix AI different from other WhatsApp solutions?',
-        answer: 'Unlike basic automation tools, Avorix AI uses advanced AI to understand customer intent, maintain conversation context, and take real actions like booking appointments and qualifying leads. It\'s designed to be your AI employee, not just an auto-responder.',
+        question: 'How is Aeviq AI different from other WhatsApp solutions?',
+        answer: 'Unlike basic automation tools, Aeviq AI uses advanced AI to understand customer intent, maintain conversation context, and take real actions like booking appointments and qualifying leads. It\'s designed to be your AI employee, not just an auto-responder.',
       },
       {
-        question: 'Do I need any technical knowledge to use Avorix AI?',
-        answer: 'Not at all. Avorix AI is designed for business owners and teams with zero technical expertise. Our team handles the entire setup, and you can manage everything through a simple dashboard.',
+        question: 'Do I need any technical knowledge to use Aeviq AI?',
+        answer: 'Not at all. Aeviq AI is designed for business owners and teams with zero technical expertise. Our team handles the entire setup, and you can manage everything through a simple dashboard.',
       },
     ],
   },
@@ -28,12 +28,12 @@ export const faqData = [
         answer: 'Most businesses are up and running within 24-48 hours. Our onboarding team handles the technical setup, trains the AI on your business data, and ensures everything works perfectly before going live.',
       },
       {
-        question: 'Can Avorix AI integrate with my existing CRM?',
-        answer: 'Yes! Avorix AI integrates with popular CRMs including HubSpot, Salesforce, Zoho, and many more. We also support custom integrations via webhooks and APIs.',
+        question: 'Can Aeviq AI integrate with my existing CRM?',
+        answer: 'Yes! Aeviq AI integrates with popular CRMs including HubSpot, Salesforce, Zoho, and many more. We also support custom integrations via webhooks and APIs.',
       },
       {
         question: 'Will it work with my existing WhatsApp Business account?',
-        answer: 'Yes. Avorix AI works with the WhatsApp Business API. If you don\'t have one set up, we\'ll help you get started. Your existing number and conversations are preserved.',
+        answer: 'Yes. Aeviq AI works with the WhatsApp Business API. If you don\'t have one set up, we\'ll help you get started. Your existing number and conversations are preserved.',
       },
     ],
   },
@@ -41,16 +41,16 @@ export const faqData = [
     category: 'Features',
     questions: [
       {
-        question: 'Can Avorix AI book appointments?',
-        answer: 'Absolutely. Avorix AI can check real-time availability, book appointments, send confirmation messages, generate Google Meet links for virtual meetings, and send automatic reminders—all within WhatsApp.',
+        question: 'Can Aeviq AI book appointments?',
+        answer: 'Absolutely. Aeviq AI can check real-time availability, book appointments, send confirmation messages, generate Google Meet links for virtual meetings, and send automatic reminders—all within WhatsApp.',
       },
       {
         question: 'Does it support multiple languages?',
-        answer: 'Yes. Avorix AI supports 50+ languages and automatically detects and responds in the customer\'s preferred language. This is perfect for businesses serving diverse or international audiences.',
+        answer: 'Yes. Aeviq AI supports 50+ languages and automatically detects and responds in the customer\'s preferred language. This is perfect for businesses serving diverse or international audiences.',
       },
       {
         question: 'What happens when the AI can\'t handle a question?',
-        answer: 'Avorix AI seamlessly transfers the conversation to a human team member with the full context of the conversation. The customer never notices a break in the experience.',
+        answer: 'Aeviq AI seamlessly transfers the conversation to a human team member with the full context of the conversation. The customer never notices a break in the experience.',
       },
     ],
   },

@@ -49,10 +49,10 @@ export function WhatsAppMockup() {
         {/* WhatsApp Header */}
         <div className="bg-[#008069] dark:bg-[#202C33] p-4 pt-8 text-white flex items-center gap-3 relative z-10">
           <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center overflow-hidden shrink-0">
-            <img src="https://ui-avatars.com/api/?name=Avorix+AI&background=random&color=fff" alt="Avorix AI" className="w-full h-full object-cover" />
+            <img src="https://ui-avatars.com/api/?name=Aeviq+AI&background=random&color=fff" alt="Aeviq AI" className="w-full h-full object-cover" />
           </div>
           <div>
-            <h3 className="font-semibold leading-tight">Avorix AI Employee</h3>
+            <h3 className="font-semibold leading-tight">Aeviq AI Employee</h3>
             <p className="text-xs text-white/80">Online</p>
           </div>
         </div>

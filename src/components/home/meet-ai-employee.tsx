@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Zap } from 'lucide-react';
+import { CheckCircle2, Zap, Brain, BoltIcon } from 'lucide-react';
 import { fadeUp, fadeLeft, fadeRight } from '@/lib/animations';
 import { SectionHeading } from '../shared/section-heading';
 import { Badge } from '../ui/badge';
@@ -12,7 +12,7 @@ export function MeetAIEmployee() {
         <SectionHeading
           badge="The Solution"
           title="Meet your new top performer"
-          description="Avorix AI isn't just a chatbot. It's an intelligent employee that understands context, takes action, and drives revenue."
+          description="Aeviq AI isn't just a chatbot. It's an intelligent employee that understands context, takes action, and drives revenue."
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -43,10 +43,10 @@ export function MeetAIEmployee() {
                 </ul>
               </div>
 
-              {/* After (Avorix AI) */}
+              {/* After (Aeviq AI) */}
               <div className="card relative overflow-hidden border-primary shadow-glow">
                 <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg flex items-center gap-1">
-                  <Zap className="w-3 h-3 fill-current" /> With Avorix AI
+                  <Zap className="w-3 h-3 fill-current" /> With Aeviq AI
                 </div>
                 <h4 className="text-heading-4 mb-4 text-primary">Your AI Employee</h4>
                 <ul className="space-y-3">
@@ -81,7 +81,7 @@ export function MeetAIEmployee() {
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center shrink-0">
-                  <span className="text-xl">🧠</span>
+                  <Brain className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="text-heading-4 mb-1">Understands Context</h4>
@@ -91,7 +91,7 @@ export function MeetAIEmployee() {
               
               <div className="flex gap-4">
                 <div className="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center shrink-0">
-                  <span className="text-xl">⚡</span>
+                  <BoltIcon className="w-6 h-6 text-accent" />
                 </div>
                 <div>
                   <h4 className="text-heading-4 mb-1">Takes Real Action</h4>

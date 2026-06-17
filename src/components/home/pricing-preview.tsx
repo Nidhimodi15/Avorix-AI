@@ -37,6 +37,11 @@ export function PricingPreview() {
                 plan.featured ? "featured scale-105 z-10 bg-bg" : "bg-bg-surface/50 backdrop-blur-sm"
               )}
             >
+              {plan.featured && (
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-accent to-primary text-white text-[10px] font-bold uppercase tracking-wider py-1.5 px-4 rounded-bl-xl shadow-md z-20">
+                  Most Popular
+                </div>
+              )}
               <div>
                 <h3 className="text-heading-3 mb-2">{plan.name}</h3>
                 <p className="text-body-sm text-text-secondary h-10 mb-6">{plan.description}</p>
@@ -64,17 +69,12 @@ export function PricingPreview() {
               </div>
               
               <div className="pricing-features flex-1">
-                {plan.features.slice(0, 6).map((feature, i) => (
+                {plan.features.map((feature, i) => (
                   <div key={i} className="pricing-feature">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
                     <span>{feature}</span>
                   </div>
                 ))}
-                {plan.features.length > 6 && (
-                  <div className="text-sm text-text-muted italic mt-2">
-                    + {plan.features.length - 6} more features
-                  </div>
-                )}
               </div>
             </motion.div>
           ))}

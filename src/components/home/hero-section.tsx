@@ -48,8 +48,8 @@ export function HeroSection() {
               animate="visible"
               className="text-display-lg lg:text-display-xl mb-6 text-text-primary"
             >
-              Turn WhatsApp Into Your <br className="hidden lg:block" />
-              <span className="text-gradient">24/7 AI Employee</span>
+              Meet the First Tool of <br className="hidden lg:block" />
+              <span className="text-gradient">Aeviq AI.</span>
             </motion.h1>
             
             <motion.p 
@@ -58,7 +58,7 @@ export function HeroSection() {
               animate="visible"
               className="text-body-xl text-text-secondary mb-10 max-w-2xl"
             >
-              Avorix AI helps businesses instantly respond to customers, capture leads, automate support, and drive growth—even while your team sleeps.
+              Turn WhatsApp into your 24/7 AI employee. This is just our first step in building a complete ecosystem of intelligent agents to automate your entire business.
             </motion.p>
             
             <motion.div 
@@ -79,24 +79,6 @@ export function HeroSection() {
               </Link>
             </motion.div>
 
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="flex items-center gap-4 text-sm text-text-muted"
-            >
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <img 
-                    key={i}
-                    src={`https://i.pravatar.cc/100?img=${i + 10}`} 
-                    alt="User avatar" 
-                    className="w-8 h-8 rounded-full border-2 border-bg"
-                  />
-                ))}
-              </div>
-              <p>Trusted by <span className="font-semibold text-text-primary">500+</span> businesses globally</p>
-            </motion.div>
           </div>
 
           {/* Right Column: Mockup */}

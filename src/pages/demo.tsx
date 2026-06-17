@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Calendar as CalendarIcon, Clock, Video, Loader2, ArrowRight } from 'lucide-react';
 import { useForm } from 'react-hook-form';
@@ -138,6 +138,36 @@ export function DemoPage() {
   const selectedDateStr = watch('date');
   const selectedTime = watch('time');
 
+  const [availableSlots, setAvailableSlots] = useState<string[]>(timeSlots);
+  const [isLoadingSlots, setIsLoadingSlots] = useState(false);
+
+  useEffect(() => {
+    if (!selectedDateStr) {
+      setAvailableSlots(timeSlots);
+      return;
+    }
+
+    const fetchSlots = async () => {
+      setIsLoadingSlots(true);
+      setValue('time', ''); // clear selected time
+      try {
+        const res = await fetch(`/api/available-slots?date=${selectedDateStr}`);
+        const data = await res.json();
+        if (data.success && data.slots) {
+          setAvailableSlots(data.slots);
+        } else {
+          setAvailableSlots(timeSlots);
+        }
+      } catch (err) {
+        setAvailableSlots(timeSlots);
+      } finally {
+        setIsLoadingSlots(false);
+      }
+    };
+
+    fetchSlots();
+  }, [selectedDateStr, setValue]);
+
   const onNextStep = async () => {
     const isStep1Valid = await trigger(['date', 'time']);
     if (isStep1Valid) {
@@ -146,70 +176,37 @@ export function DemoPage() {
     }
   };
 
-  const OWNER_EMAILS = ['parth.hindiya@gmail.com', 'nidhimodi970@gmail.com'];
-
-  const generateMeetCode = () => {
-    const seg = (n: number) => Math.random().toString(36).substring(2, 2 + n);
-    return `${seg(3)}-${seg(4)}-${seg(3)}`;
-  };
-
-  const sendOwnerEmails = async (data: DemoFormValues, link: string) => {
-    const subject = encodeURIComponent(`[Avorix AI] New Demo Booked – ${data.firstName} ${data.lastName}`);
-    const body = encodeURIComponent(
-      `New demo booking received!\n\n` +
-      `Name: ${data.firstName} ${data.lastName}\n` +
-      `Email: ${data.email}\n` +
-      `Company: ${data.company}\n` +
-      `Phone: ${data.phone}\n` +
-      `Date: ${formatSelectedDate(data.date)}\n` +
-      `Time: ${data.time}\n\n` +
-      `Google Meet Link: ${link}\n\n` +
-      `Join the call at the scheduled time.`
-    );
-    // Open default mail client as fallback (works without a backend)
-    // In production replace this with a real EmailJS / SendGrid / Resend call
-    console.log('Booking details for owners:', { data, link });
-    // Attempt to send via EmailJS free tier (no backend needed)
-    try {
-      for (const ownerEmail of OWNER_EMAILS) {
-        await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            service_id: 'service_avorix',       // ← replace with your EmailJS service ID
-            template_id: 'template_avorix',     // ← replace with your EmailJS template ID
-            user_id: 'YOUR_EMAILJS_PUBLIC_KEY', // ← replace with your EmailJS public key
-            template_params: {
-              to_email: ownerEmail,
-              customer_name: `${data.firstName} ${data.lastName}`,
-              customer_email: data.email,
-              customer_company: data.company,
-              customer_phone: data.phone,
-              booking_date: formatSelectedDate(data.date),
-              booking_time: data.time,
-              meet_link: link,
-            },
-          }),
-        });
-      }
-    } catch (err) {
-      console.warn('Email send failed (EmailJS not configured yet):', err);
-    }
-  };
-
   const onSubmit = async (data: DemoFormValues) => {
     setIsSubmitting(true);
 
-    const code = generateMeetCode();
-    const link = `https://meet.google.com/${code}`;
+    try {
+      const res = await fetch(`/api/book-demo`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          date: selectedDateStr ? formatSelectedDate(selectedDateStr) : data.date,
+          time: data.time,
+        }),
+      });
 
-    // Send notification emails to both owners
-    await sendOwnerEmails(data, link);
+      const result = await res.json();
 
-    // Short UX delay
-    await new Promise(resolve => setTimeout(resolve, 1200));
+      if (result.success && result.meetLink) {
+        setMeetLink(result.meetLink);
+      } else {
+        setMeetLink('');
+        console.warn('No meet link received:', result.error);
+      }
+    } catch (err) {
+      console.warn('Backend call failed:', err);
+      setMeetLink('');
+    }
 
-    setMeetLink(link);
     setIsSubmitting(false);
     setStep(3);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -231,7 +228,7 @@ export function DemoPage() {
                 Schedule your <span className="text-primary">personalized demo</span>
               </h1>
               <p className="text-body-lg text-text-secondary text-center max-w-2xl mx-auto">
-                See exactly how Avorix AI can transform your customer communication, capture more leads, and save your team hundreds of hours.
+                See exactly how Aeviq AI can transform your customer communication, capture more leads, and save your team hundreds of hours.
               </p>
             </motion.div>
           )}
@@ -257,7 +254,7 @@ export function DemoPage() {
                 <ul className="space-y-4 mb-8">
                   {[
                     'Deep dive into your current WhatsApp workflow',
-                    'Live demonstration of Avorix AI in action',
+                    'Live demonstration of Aeviq AI in action',
                     'Custom ROI projection for your business',
                     'Interactive Q&A with our automation experts'
                   ].map((item, i) => (
@@ -364,8 +361,19 @@ export function DemoPage() {
                           <Clock className="w-4 h-4 text-text-muted" /> 
                           Choose Time (Your Local Time)
                         </label>
-                        <div className="grid grid-cols-2 gap-2">
-                          {timeSlots.map((time) => {
+                        
+                        {isLoadingSlots ? (
+                          <div className="flex flex-col items-center justify-center py-8">
+                            <Loader2 className="w-8 h-8 text-primary animate-spin mb-2" />
+                            <p className="text-sm text-text-muted">Checking availability...</p>
+                          </div>
+                        ) : availableSlots.length === 0 ? (
+                          <div className="text-center py-8 bg-bg-surface rounded-xl border border-border">
+                            <p className="text-sm text-text-muted">No slots available on this date.</p>
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-2 gap-2">
+                            {availableSlots.map((time) => {
                             const isSelected = selectedTime === time;
                             return (
                               <button
@@ -387,6 +395,7 @@ export function DemoPage() {
                             );
                           })}
                         </div>
+                        )}
                         {errors.time && <p className="form-error mt-2">{errors.time.message}</p>}
                       </div>
                     </div>
@@ -521,7 +530,7 @@ export function DemoPage() {
 
                     <h2 className="text-heading-2 mb-3">Demo Scheduled! 🎉</h2>
                     <p className="text-body-lg text-text-secondary mb-8 max-w-lg mx-auto">
-                      Your demo is confirmed. The Avorix team has been notified and will join at the scheduled time.
+                      Your demo is confirmed. The Aeviq team has been notified and will join at the scheduled time.
                     </p>
 
                     <div className="bg-bg-surface border border-border p-6 rounded-2xl max-w-md mx-auto mb-8 text-left">
@@ -539,14 +548,18 @@ export function DemoPage() {
                         <Video className="w-5 h-5 text-primary mt-1 shrink-0" />
                         <div className="w-full min-w-0">
                           <p className="font-semibold text-text-primary text-sm mb-1">Google Meet Link</p>
-                          <a
-                            href={meetLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:underline text-sm break-all font-mono"
-                          >
-                            {meetLink}
-                          </a>
+                          {meetLink ? (
+                            <a
+                              href={meetLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline text-sm break-all font-mono"
+                            >
+                              {meetLink}
+                            </a>
+                          ) : (
+                            <p className="text-text-secondary text-sm">Meet link will be shared via email shortly.</p>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -554,18 +567,20 @@ export function DemoPage() {
                     {/* Owner notification badge */}
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-8">
                       <CheckCircle2 className="w-4 h-4" />
-                      Team notified at parth.hindiya@gmail.com &amp; nidhimodi970@gmail.com
+                      Founders notified — confirmation email sent
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                      <a
-                        href={meetLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary btn-lg"
-                      >
-                        Join Google Meet
-                      </a>
+                      {meetLink && (
+                        <a
+                          href={meetLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-primary btn-lg"
+                        >
+                          Join Google Meet
+                        </a>
+                      )}
                       <a href="/" className="btn btn-secondary btn-lg">
                         Return to Home
                       </a>

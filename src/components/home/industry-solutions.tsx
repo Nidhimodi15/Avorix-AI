@@ -21,7 +21,7 @@ export function IndustrySolutions() {
           <SectionHeading
             badge="Universal Application"
             title="Built for your industry"
-            description="Whether you're booking patients or selling properties, Avorix AI adapts to your specific business needs."
+            description="Whether you're booking patients or selling properties, Aeviq AI adapts to your specific business needs."
             align="left"
             className="mb-0"
           />

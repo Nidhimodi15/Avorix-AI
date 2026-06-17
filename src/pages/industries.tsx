@@ -18,7 +18,7 @@ export function IndustriesPage() {
               AI built for <span className="text-gradient">your industry.</span>
             </h1>
             <p className="text-body-xl text-text-secondary">
-              Discover how businesses in your sector are using Avorix AI to automate workflows, capture leads, and serve customers better.
+              Discover how businesses in your sector are using Aeviq AI to automate workflows, capture leads, and serve customers better.
             </p>
           </motion.div>
         </div>

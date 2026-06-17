@@ -17,7 +17,7 @@ interface CTABannerProps {
 
 export function CTABanner({
   title = "Ready to Transform Your WhatsApp?",
-  description = "Join hundreds of businesses using Avorix AI to automate conversations, capture leads, and drive revenue 24/7.",
+  description = "Join hundreds of businesses using Aeviq AI to automate conversations, capture leads, and drive revenue 24/7.",
   primaryButtonText = "Book Free Demo",
   primaryButtonLink = "/demo",
   secondaryButtonText = "View Pricing",
