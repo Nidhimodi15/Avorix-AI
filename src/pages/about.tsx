@@ -30,8 +30,8 @@ const values = [
 
 // Founders
 const team = [
-  { name: 'Nidhi Modi', role: 'Co-founder', initials: 'NM' },
-  { name: 'Parth Hindiya', role: 'Co-founder', initials: 'PH' }
+  { name: 'Nidhi Modi', role: 'CTO', initials: 'NM' },
+  { name: 'Parth Hindiya', role: 'CEO', initials: 'PH' }
 ];
 
 export function AboutPage() {
