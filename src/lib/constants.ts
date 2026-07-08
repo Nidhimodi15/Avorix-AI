@@ -10,8 +10,8 @@ export const NAV_LINKS = [
 
 export const SITE_CONFIG = {
   name: 'Aeviq AI',
-  tagline: 'Your 24/7 AI Employee on WhatsApp',
-  description: 'Aeviq AI helps businesses instantly respond to customers, capture leads, automate support, and drive growth through WhatsApp.',
+  tagline: 'We Build, Automate & Scale Your Business',
+  description: 'Aeviq AI is your complete technology partner — offering AI employees, custom website development, business automation, digital marketing, and more.',
   url: 'https://aeviq.ai',
   email: 'hello@aeviq.ai',
   phone: '+1 (555) 000-0000',

@@ -37,7 +37,7 @@ export function HeroSection() {
               <Badge variant="primary" className="mb-6">
                 <span className="flex items-center gap-1.5">
                   <Star className="w-3.5 h-3.5 fill-primary text-primary" />
-                  Your New AI Employee
+                  AI Employees · Custom Websites · Automation
                 </span>
               </Badge>
             </motion.div>
@@ -48,8 +48,8 @@ export function HeroSection() {
               animate="visible"
               className="text-display-lg lg:text-display-xl mb-6 text-text-primary"
             >
-              Meet the First Tool of <br className="hidden lg:block" />
-              <span className="text-gradient">Aeviq AI.</span>
+              We Build, Automate &<br className="hidden lg:block" />
+              <span className="text-gradient">Scale Your Business.</span>
             </motion.h1>
             
             <motion.p 
@@ -58,7 +58,7 @@ export function HeroSection() {
               animate="visible"
               className="text-body-xl text-text-secondary mb-10 max-w-2xl"
             >
-              Turn WhatsApp into your 24/7 AI employee. This is just our first step in building a complete ecosystem of intelligent agents to automate your entire business.
+              From AI-powered WhatsApp employees and custom websites to business automation and digital marketing — Aeviq AI is your complete technology partner for growth.
             </motion.p>
             
             <motion.div 
