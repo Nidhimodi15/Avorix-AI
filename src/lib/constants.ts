@@ -13,8 +13,8 @@ export const SITE_CONFIG = {
   tagline: 'We Build, Automate & Scale Your Business',
   description: 'Aeviq AI is your complete technology partner — offering AI employees, custom website development, business automation, digital marketing, and more.',
   url: 'https://aeviq.ai',
-  email: 'hello@aeviq.ai',
-  phone: '+1 (555) 000-0000',
+  email: 'parth.hindiya@gmail.com',
+  phone: '',
   social: {
     twitter: 'https://twitter.com/aeviqai',
     linkedin: 'https://linkedin.com/company/aeviq-ai',

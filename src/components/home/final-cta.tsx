@@ -4,8 +4,8 @@ import { CTABanner } from '../shared/cta-banner';
 export function FinalCTA() {
   return (
     <CTABanner 
-      title="Ready to Transform Your WhatsApp?"
-      description="Join hundreds of businesses using Aeviq AI to automate conversations, capture leads, and drive revenue 24/7."
+      title="Ready to Grow on Autopilot?"
+      description="Join hundreds of businesses using Aeviq AI to automate operations, capture leads, and drive revenue — all on autopilot."
       primaryButtonText="Book Free Demo"
       secondaryButtonText="View Pricing"
     />

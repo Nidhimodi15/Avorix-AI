@@ -253,7 +253,7 @@ export function DemoPage() {
                 <h4 className="font-semibold text-text-primary mb-4">What to expect:</h4>
                 <ul className="space-y-4 mb-8">
                   {[
-                    'Deep dive into your current WhatsApp workflow',
+                    'Deep dive into your current business workflow',
                     'Live demonstration of Aeviq AI in action',
                     'Custom ROI projection for your business',
                     'Interactive Q&A with our automation experts'
