@@ -222,6 +222,36 @@ export function HeroSection() {
                 })}
               </div>
             </div>
+
+            {/* Floating stat card 1 */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute -left-12 top-1/4 hidden lg:block z-20"
+            >
+              <div className="bg-bg-card/90 backdrop-blur-md rounded-xl p-3 shadow-2xl flex items-center gap-3 border border-border/60">
+                <div className="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center">
+                  <span className="text-accent font-bold text-sm">✓</span>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-text-primary">New lead captured</p>
+                  <p className="text-[10px] text-text-muted">2 seconds ago</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Floating stat card 2 */}
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+              className="absolute -right-8 bottom-1/4 hidden lg:block z-20"
+            >
+              <div className="bg-bg-card/90 backdrop-blur-md rounded-xl p-3 shadow-2xl border border-border/60">
+                <p className="text-[10px] font-bold text-text-primary mb-0.5 uppercase tracking-wider">Monthly Revenue</p>
+                <p className="text-lg font-bold text-primary">+₹2.4L</p>
+                <p className="text-[10px] text-text-muted">via automation</p>
+              </div>
+            </motion.div>
           </motion.div>
 
         </div>
