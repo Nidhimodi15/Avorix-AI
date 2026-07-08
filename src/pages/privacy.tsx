@@ -64,10 +64,15 @@ export function PrivacyPage() {
               We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable.
             </p>
 
-            <h2 className="text-heading-3 text-text-primary mb-6">6. Contact Us</h2>
+            <h2 className="text-heading-3 text-text-primary mb-6">6. Meeting Preparation & Strategy Calls</h2>
+            <p className="mb-8">
+              To ensure the most productive experience during our product discovery and strategy meetings, we request that you prepare all necessary requirements, brand assets, and business objectives beforehand. The information discussed remains completely confidential.
+            </p>
+
+            <h2 className="text-heading-3 text-text-primary mb-6">7. Contact Us</h2>
             <p>
               If you have questions or comments about this Privacy Policy, please contact us at: <br/>
-              <a href="mailto:privacy@aeviq.ai" className="text-primary hover:underline">privacy@aeviq.ai</a>
+              <a href="mailto:parth.hindiya@gmail.com" className="text-primary hover:underline">parth.hindiya@gmail.com</a>
             </p>
           </div>
         </motion.div>

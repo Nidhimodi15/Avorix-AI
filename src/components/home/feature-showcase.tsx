@@ -16,7 +16,7 @@ export function FeatureShowcase() {
       <div className="container-wide">
         <SectionHeading
           badge="Features"
-          title="Everything you need to automate WhatsApp"
+          title="Everything you need to automate your business"
           description="Click any feature to explore it in detail. Scroll to see all features."
         />
 

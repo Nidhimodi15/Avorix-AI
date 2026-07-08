@@ -62,11 +62,8 @@ export function IndustriesPage() {
 
                     <div className="mt-auto pt-6 border-t border-border flex items-center justify-between">
                        <div className="flex flex-col">
-                          <span className="text-xl font-bold text-primary leading-none mb-1">
-                            {industry.stat.split(' ')[0]}
-                          </span>
-                          <span className="text-[10px] font-semibold text-text-secondary uppercase tracking-wider">
-                            {industry.stat.substring(industry.stat.indexOf(' ') + 1)}
+                          <span className="text-sm font-bold text-primary leading-none mb-1">
+                            Tailored Solutions
                           </span>
                         </div>
                     </div>

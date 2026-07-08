@@ -55,10 +55,15 @@ export function TermsPage() {
               In no event shall Aeviq AI be liable for any direct, indirect, incidental, special, consequential or exemplary damages. This shall include, but not be limited to damages for loss of profits, business interruption, business reputation or goodwill, loss of programs or information or other intangible loss arising out of the use of or the inability to use the service.
             </p>
 
-            <h2 className="text-heading-3 text-text-primary mb-6">6. Contact Information</h2>
+            <h2 className="text-heading-3 text-text-primary mb-6">6. Client Meetings & Discovery</h2>
+            <p className="mb-8">
+              When scheduling a product strategy or discovery meeting with our team, you agree to come prepared with relevant business requirements, objectives, and any necessary assets. This ensures our consultation is efficient and tailored to your needs.
+            </p>
+
+            <h2 className="text-heading-3 text-text-primary mb-6">7. Contact Information</h2>
             <p>
               If you have any questions regarding these Terms, please contact us at:<br/>
-              <a href="mailto:legal@aeviq.ai" className="text-primary hover:underline">legal@aeviq.ai</a>
+              <a href="mailto:parth.hindiya@gmail.com" className="text-primary hover:underline">parth.hindiya@gmail.com</a>
             </p>
           </div>
         </motion.div>

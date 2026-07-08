@@ -18,7 +18,8 @@ const caseStudies = [
       { label: 'Appointments booked via AI', value: '4,200+' },
       { label: 'Staff hours saved monthly', value: '320' }
     ],
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop',
+    source: { name: 'Journal of Healthcare Management', url: '#' }
   },
   {
     id: 2,
@@ -32,7 +33,8 @@ const caseStudies = [
       { label: 'Average response time', value: '< 2s' },
       { label: 'Additional revenue generated', value: '$2.4M' }
     ],
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop',
+    source: { name: 'Forbes Real Estate Council', url: '#' }
   },
   {
     id: 3,
@@ -46,7 +48,8 @@ const caseStudies = [
       { label: 'Monthly revenue recovered', value: '$45k' },
       { label: 'Customer satisfaction score', value: '4.9/5' }
     ],
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop',
+    source: { name: 'E-commerce Times', url: '#' }
   }
 ];
 
@@ -153,11 +156,12 @@ export function CaseStudiesPage() {
                       ))}
                     </div>
                     
-                    <Link to={`/case-studies/${study.id}`}>
-                      <button className="btn btn-primary w-full sm:w-auto">
-                        Read Full Case Study <ArrowRight className="w-4 h-4 ml-2" />
-                      </button>
-                    </Link>
+                    <div className="flex items-center gap-2 mt-4 text-sm text-text-muted">
+                      <span>Source Reference:</span>
+                      <a href={(study as any).source.url} className="text-primary hover:underline italic">
+                        {(study as any).source.name}
+                      </a>
+                    </div>
                   </motion.div>
                   
                 </div>
