@@ -214,8 +214,7 @@ export function HeroSection() {
                       }`}
                     >
                       <Icon className="w-4 h-4 shrink-0" />
-                      {/* Label: show on sm+, hide on xs to prevent overflow */}
-                      <span className="hidden sm:block text-[9px] font-medium text-center leading-tight w-full truncate px-0.5">
+                      <span className="text-[9px] sm:text-[10px] font-medium text-center leading-tight w-full truncate px-0.5">
                         {s.short}
                       </span>
                     </button>
