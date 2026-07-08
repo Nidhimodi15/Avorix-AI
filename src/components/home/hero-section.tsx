@@ -166,7 +166,7 @@ export function HeroSection() {
               </div>
 
               {/* Active service */}
-              <div className="p-8 min-h-[280px] flex flex-col justify-between">
+              <div className="p-8 min-h-[240px] flex flex-col justify-between">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
@@ -187,56 +187,29 @@ export function HeroSection() {
                 </AnimatePresence>
               </div>
 
-              {/* Services list */}
-              <div className="border-t border-border px-5 py-3 grid grid-cols-3 sm:grid-cols-4 gap-2">
+              {/* Services icon row — single row, short labels, no overflow */}
+              <div className="border-t border-border px-4 py-3 flex items-center justify-between gap-1">
                 {services.map((s, i) => {
                   const Icon = s.icon;
+                  const shortLabels = ['WhatsApp', 'Websites', 'Automation', 'Lead Gen', 'Chatbots', 'SEO', 'Marketing'];
                   return (
                     <button
                       key={i}
                       onClick={() => setActiveIndex(i)}
-                      className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all text-xs font-medium ${
+                      title={s.label}
+                      className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all flex-1 ${
                         i === activeIndex
                           ? `${s.bg} ${s.color}`
                           : 'text-text-muted hover:text-text-primary hover:bg-bg-surface'
                       }`}
                     >
-                      <Icon className="w-4 h-4" />
-                      <span className="text-center leading-tight hidden sm:block">{s.label.split(' ').slice(0, 2).join(' ')}</span>
+                      <Icon className="w-4 h-4 shrink-0" />
+                      <span className="text-[10px] font-medium text-center leading-tight whitespace-nowrap">{shortLabels[i]}</span>
                     </button>
                   );
                 })}
               </div>
             </div>
-
-            {/* Floating stat card */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -left-10 top-1/3 hidden lg:block z-20"
-            >
-              <div className="glass-card rounded-xl p-3 shadow-lg flex items-center gap-3 border border-border">
-                <div className="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center">
-                  <span className="text-accent font-bold text-sm">✓</span>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-text-primary">New lead captured</p>
-                  <p className="text-xs text-text-muted">2 seconds ago · WhatsApp</p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -right-6 bottom-1/3 hidden lg:block z-20"
-            >
-              <div className="glass-card rounded-xl p-3 shadow-lg border border-border">
-                <p className="text-xs font-bold text-text-primary mb-0.5">Monthly revenue</p>
-                <p className="text-lg font-bold text-primary">+₹2.4L</p>
-                <p className="text-xs text-text-muted">via automation</p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
