@@ -95,7 +95,7 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* ── LEFT: Copy ── */}
-          <div>
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Eyebrow */}
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-semibold">
@@ -143,7 +143,7 @@ export function HeroSection() {
             {/* Trust strip */}
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.55, delay: 0.45 }}
-              className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-text-muted"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 text-xs sm:text-sm text-text-muted"
             >
               {['No long-term contracts', 'Setup in 48 hours', '24/7 support'].map((t, i) => (
                 <span key={i} className="flex items-center gap-1.5">
