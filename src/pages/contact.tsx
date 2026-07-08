@@ -77,34 +77,7 @@ export function ContactPage() {
             animate="visible"
             className="lg:col-span-5 flex flex-col gap-6"
           >
-            {/* Email Card */}
-            <div className="card flex flex-col">
-              <h3 className="text-heading-3 mb-8">Contact Information</h3>
-              
-              <div className="flex items-start gap-4 mb-8">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                  <Mail className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-text-primary mb-1">Email Us</h4>
-                  <p className="text-text-secondary mb-1">We'll respond within 24 hours.</p>
-                  <a href={`mailto:${SITE_CONFIG.email}`} className="text-primary hover:underline font-medium">
-                    {SITE_CONFIG.email}
-                  </a>
-                </div>
-              </div>
 
-              {/* Quick response promise */}
-              <div className="mt-auto rounded-2xl bg-gradient-to-br from-bg-section to-bg-section/50 border border-border/50 p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Sparkles className="w-5 h-5 text-primary" />
-                  <span className="font-semibold text-text-primary text-sm">Fast Response Guarantee</span>
-                </div>
-                <p className="text-sm text-text-secondary leading-relaxed">
-                  Our team typically responds within a few hours during business days. For urgent matters, mention it in your subject line.
-                </p>
-              </div>
-            </div>
 
             {/* Founder Direct Email Cards */}
             <div className="space-y-3">
@@ -125,7 +98,7 @@ export function ContactPage() {
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                   <span className="hidden sm:inline">nidhimodi970@gmail.com</span>
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+
                 </div>
               </a>
 
@@ -144,7 +117,7 @@ export function ContactPage() {
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                   <span className="hidden sm:inline">parth.hindiya@gmail.com</span>
-                  <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
+
                 </div>
               </a>
             </div>

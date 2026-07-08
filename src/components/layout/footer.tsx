@@ -27,12 +27,7 @@ export function Footer() {
               {SITE_CONFIG.description}
             </p>
             <div className="flex items-center gap-3 mt-2">
-              <a href={SITE_CONFIG.social.twitter} target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-[#1DA1F2] hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
-                title="Twitter">
-                <MessageCircle className="w-4 h-4" />
-                <span className="sr-only">Twitter</span>
-              </a>
+
               <a href={SITE_CONFIG.social.linkedin} target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-[#0077B5] hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
                 title="LinkedIn">
