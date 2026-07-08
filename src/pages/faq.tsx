@@ -177,8 +177,8 @@ export function FAQPage() {
       <CTABanner 
         title="Still have questions?"
         description="Our team is here to help. Reach out to us and we'll get back to you as soon as possible."
-        primaryButtonText="Contact Support"
-        primaryButtonLink="/contact"
+        primaryButtonText="Email Us"
+        primaryButtonLink="mailto:parth.hindiya@gmail.com"
         secondaryButtonText="Book a Demo"
         secondaryButtonLink="/demo"
         withSparkles={false}

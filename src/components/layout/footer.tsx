@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, MessageCircle, Share2, ArrowRight } from 'lucide-react';
+import { Globe, MessageCircle, Instagram, ArrowRight } from 'lucide-react';
 import { Logo } from '../shared/logo';
 import { Button } from '../ui/button';
 import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
@@ -37,9 +37,7 @@ export function Footer() {
               <a href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-gradient-to-r hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
                 style={{}}
-                title="Instagram">
-                <Share2 className="w-4 h-4" />
-                <span className="sr-only">Instagram</span>
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -66,7 +64,7 @@ export function Footer() {
             <h3 className="footer-heading">Company</h3>
             <ul className="flex flex-col gap-2">
               <li><Link to="/about" className="footer-link">About Us</Link></li>
-              <li><Link to="/blog" className="footer-link">Blog</Link></li>
+
               <li><Link to="/contact" className="footer-link">Contact</Link></li>
               <li><Link to="/faq" className="footer-link">FAQ</Link></li>
             </ul>

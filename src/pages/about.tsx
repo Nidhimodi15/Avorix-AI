@@ -43,10 +43,10 @@ export function AboutPage() {
         <div className="container-tight relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
             <h1 className="text-display-lg mb-6">
-              Building the future of <span className="text-gradient">customer communication.</span>
+              Building the future of <span className="text-gradient">business automation.</span>
             </h1>
             <p className="text-body-xl text-text-secondary">
-              We're on a mission to help businesses of all sizes provide enterprise-grade customer experiences through the world's most popular messaging app.
+              We're on a mission to help businesses of all sizes provide enterprise-grade experiences, from AI employees to custom software development.
             </p>
           </motion.div>
         </div>
@@ -65,16 +65,16 @@ export function AboutPage() {
               <h2 className="text-heading-2 mb-6">Our Story</h2>
               <div className="space-y-4 text-body-lg text-text-secondary">
                 <p>
-                  Aeviq AI was born out of a simple frustration: why is it so hard for businesses to reply quickly to their customers on WhatsApp?
+                  Aeviq AI was born out of a simple frustration: why is it so hard for businesses to automate their workflows and scale efficiently?
                 </p>
                 <p>
-                  We saw local businesses losing leads because they couldn't respond after 5 PM. We saw customer support teams drowning in repetitive queries. We knew there had to be a better way.
+                  We saw local businesses losing leads because of outdated tech. We saw teams drowning in repetitive queries and manual data entry. We knew there had to be a better way.
                 </p>
                 <p>
-                  So we built an AI employee specifically for WhatsApp. Not a rigid, rule-based chatbot that frustrates users, but a dynamic, intelligent system that understands context, takes actions, and knows exactly when to hand off to a human.
+                  So we built a complete technology partner. Not just another software agency, but a dynamic team that provides AI chatbots, custom web development, digital marketing, and full business automation under one roof.
                 </p>
                 <p className="font-semibold text-text-primary">
-                  Today, Aeviq AI powers millions of conversations for hundreds of businesses globally.
+                  Today, Aeviq AI powers digital transformations for businesses globally.
                 </p>
               </div>
             </motion.div>
@@ -88,8 +88,8 @@ export function AboutPage() {
             >
               <div className="absolute inset-0 bg-grid opacity-30" />
               <div className="relative z-10 text-center">
-                <div className="text-display-xl font-bold text-primary mb-2">5M+</div>
-                <p className="text-heading-4 text-text-secondary">Conversations Automated</p>
+                <div className="text-display-xl font-bold text-primary mb-2">10x</div>
+                <p className="text-heading-4 text-text-secondary">Average Business Growth</p>
               </div>
             </motion.div>
           </div>

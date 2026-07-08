@@ -88,75 +88,7 @@ export function PricingPage() {
         </div>
       </section>
 
-      {/* Feature Comparison Table */}
-      <section className="section bg-bg-section border-y border-border/50">
-        <div className="container-wide max-w-5xl">
-          <SectionHeading
-            title="Compare Plans"
-            description="Detailed breakdown of what's included in each tier."
-          />
-          
-          <div className="overflow-x-auto pb-8">
-            <table className="w-full text-left border-collapse min-w-[800px]">
-              <thead>
-                <tr>
-                  <th className="w-1/3 py-4 px-6 border-b-2 border-border text-sm font-semibold uppercase tracking-wider text-text-muted">Features</th>
-                  <th className="w-1/5 py-4 px-6 border-b-2 border-border text-lg font-bold text-text-primary">Starter</th>
-                  <th className="w-1/5 py-4 px-6 border-b-2 border-primary text-lg font-bold text-primary relative">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full">Popular</div>
-                    Professional
-                  </th>
-                  <th className="w-1/5 py-4 px-6 border-b-2 border-border text-lg font-bold text-text-primary">Enterprise</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {/* Conversations row */}
-                <tr className="hover:bg-bg-surface/50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-text-primary">Monthly Conversations</td>
-                  <td className="py-4 px-6 text-text-secondary">Up to 1,000</td>
-                  <td className="py-4 px-6 font-medium text-text-primary bg-primary/5">Up to 10,000</td>
-                  <td className="py-4 px-6 text-text-secondary">Unlimited</td>
-                </tr>
-                {/* Numbers row */}
-                <tr className="hover:bg-bg-surface/50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-text-primary">WhatsApp Numbers</td>
-                  <td className="py-4 px-6 text-text-secondary">1</td>
-                  <td className="py-4 px-6 font-medium text-text-primary bg-primary/5">3</td>
-                  <td className="py-4 px-6 text-text-secondary">Unlimited</td>
-                </tr>
-                {/* CRM Integration row */}
-                <tr className="hover:bg-bg-surface/50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-text-primary">CRM Integration</td>
-                  <td className="py-4 px-6 text-text-muted">—</td>
-                  <td className="py-4 px-6 font-medium text-text-primary bg-primary/5"><CheckCircle2 className="w-5 h-5 text-accent" /></td>
-                  <td className="py-4 px-6 text-text-secondary"><CheckCircle2 className="w-5 h-5 text-accent" /></td>
-                </tr>
-                {/* Appt Booking row */}
-                <tr className="hover:bg-bg-surface/50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-text-primary">Appointment Booking (Google Meet)</td>
-                  <td className="py-4 px-6 text-text-muted">—</td>
-                  <td className="py-4 px-6 font-medium text-text-primary bg-primary/5"><CheckCircle2 className="w-5 h-5 text-accent" /></td>
-                  <td className="py-4 px-6 text-text-secondary"><CheckCircle2 className="w-5 h-5 text-accent" /></td>
-                </tr>
-                {/* Languages row */}
-                <tr className="hover:bg-bg-surface/50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-text-primary">Multi-language Support</td>
-                  <td className="py-4 px-6 text-text-secondary">Single Language</td>
-                  <td className="py-4 px-6 font-medium text-text-primary bg-primary/5">20 Languages</td>
-                  <td className="py-4 px-6 text-text-secondary">50+ Languages</td>
-                </tr>
-                 {/* Custom Model row */}
-                 <tr className="hover:bg-bg-surface/50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-text-primary">Custom AI Model Training</td>
-                  <td className="py-4 px-6 text-text-muted">—</td>
-                  <td className="py-4 px-6 text-text-muted bg-primary/5">—</td>
-                  <td className="py-4 px-6 text-text-secondary"><CheckCircle2 className="w-5 h-5 text-accent" /></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+
 
       {/* Pricing FAQ */}
       <section className="section">

@@ -13,7 +13,7 @@ import { PricingPage } from './pages/pricing';
 import { AboutPage } from './pages/about';
 import { ContactPage } from './pages/contact';
 import { FAQPage } from './pages/faq';
-import { BlogPage } from './pages/blog';
+
 import { CaseStudiesPage } from './pages/case-studies';
 import { PrivacyPage } from './pages/privacy';
 import { TermsPage } from './pages/terms';
@@ -47,7 +47,7 @@ function App() {
               <Route path="/demo" element={<DemoPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/blog" element={<BlogPage />} />
+
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/case-studies" element={<CaseStudiesPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
