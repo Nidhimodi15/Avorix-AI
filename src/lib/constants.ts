@@ -2,7 +2,6 @@ export const NAV_LINKS = [
   { label: 'Features', href: '/features' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Industries', href: '/industries' },
-  { label: 'Pricing', href: '/pricing' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'About', href: '/about' },
   { label: 'Contact Us', href: '/contact' },

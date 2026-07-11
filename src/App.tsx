@@ -9,7 +9,7 @@ import { DemoPage } from './pages/demo';
 import { FeaturesPage } from './pages/features';
 import { SolutionsPage } from './pages/solutions';
 import { IndustriesPage } from './pages/industries';
-import { PricingPage } from './pages/pricing';
+
 import { AboutPage } from './pages/about';
 import { ContactPage } from './pages/contact';
 import { FAQPage } from './pages/faq';
@@ -43,7 +43,7 @@ function App() {
               <Route path="/features" element={<FeaturesPage />} />
               <Route path="/solutions" element={<SolutionsPage />} />
               <Route path="/industries" element={<IndustriesPage />} />
-              <Route path="/pricing" element={<PricingPage />} />
+
               <Route path="/demo" element={<DemoPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />

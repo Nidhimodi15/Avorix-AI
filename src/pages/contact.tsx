@@ -30,21 +30,28 @@ export function ContactPage() {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+      
+      if (!res.ok) {
+        throw new Error('Failed to send message');
+      }
+      
+      setIsSuccess(true);
+      reset();
+      
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 5000);
     } catch (err) {
       console.warn('Backend email send failed:', err);
+      alert('There was a problem sending your message. Please try emailing us directly.');
+    } finally {
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
-    
-    setTimeout(() => {
-      setIsSuccess(false);
-    }, 5000);
   };
 
   return (

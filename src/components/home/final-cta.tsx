@@ -7,7 +7,6 @@ export function FinalCTA() {
       title="Ready to Grow on Autopilot?"
       description="Join hundreds of businesses using Aeviq AI to automate operations, capture leads, and drive revenue — all on autopilot."
       primaryButtonText="Book Free Demo"
-      secondaryButtonText="View Pricing"
     />
   );
 }

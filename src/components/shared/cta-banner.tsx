@@ -20,8 +20,8 @@ export function CTABanner({
   description = "Join hundreds of businesses using Aeviq AI to automate operations, capture leads, and drive revenue — all on autopilot.",
   primaryButtonText = "Book Free Demo",
   primaryButtonLink = "/demo",
-  secondaryButtonText = "View Pricing",
-  secondaryButtonLink = "/pricing",
+  secondaryButtonText,
+  secondaryButtonLink,
   withSparkles = true,
 }: CTABannerProps) {
   return (
@@ -69,15 +69,17 @@ export function CTABanner({
               </Button>
             </Link>
             
-            <Link to={secondaryButtonLink} className="w-full sm:w-auto">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="w-full sm:w-auto text-white border-white/30 hover:bg-white/10 hover:border-white/50"
-              >
-                {secondaryButtonText}
-              </Button>
-            </Link>
+            {secondaryButtonText && secondaryButtonLink && (
+              <Link to={secondaryButtonLink} className="w-full sm:w-auto">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full sm:w-auto text-white border-white/30 hover:bg-white/10 hover:border-white/50"
+                >
+                  {secondaryButtonText}
+                </Button>
+              </Link>
+            )}
           </div>
           
           <p className="mt-6 text-sm text-white/60">
