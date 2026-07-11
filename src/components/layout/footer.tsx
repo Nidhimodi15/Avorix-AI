@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, MessageCircle, Instagram, ArrowRight } from 'lucide-react';
+import { Globe, MessageCircle, ArrowRight } from 'lucide-react';
 import { Logo } from '../shared/logo';
 import { Button } from '../ui/button';
 import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
@@ -37,7 +37,7 @@ export function Footer() {
               <a href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-gradient-to-r hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
                 style={{}}>
-                <Instagram className="w-4 h-4" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
             </div>
           </div>
