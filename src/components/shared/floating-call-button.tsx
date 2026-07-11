@@ -18,13 +18,10 @@ export function FloatingCallButton() {
       >
         <a
           href="tel:+919664713124"
-          className="relative flex items-center justify-center w-14 h-14 bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-full text-white shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:-translate-y-1 transition-all duration-300"
+          className="relative flex items-center justify-center w-12 h-12 bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-full text-white shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-1 transition-all duration-300"
           aria-label="Call Us"
         >
-          {/* Pulsing rings behind the button */}
-          <span className="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-20 duration-1000"></span>
-          
-          <Phone className="w-6 h-6" />
+          <Phone className="w-5 h-5" />
         </a>
       </motion.div>
     </AnimatePresence>
