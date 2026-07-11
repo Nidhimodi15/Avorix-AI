@@ -295,6 +295,16 @@ ul, ol {
   .text-heading-3 { font-size: 1.25rem; }
 }
 
+@media (max-width: 400px) {
+  .text-display-xl { font-size: 2.25rem; }
+  .text-display-lg { font-size: 1.85rem; }
+  .text-heading-1 { font-size: 1.75rem; }
+  .text-heading-2 { font-size: 1.5rem; }
+  .container, .container-tight, .container-wide {
+    padding: 0 16px;
+  }
+}
+
 /* ===== Gradient Utilities ===== */
 .text-gradient {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
