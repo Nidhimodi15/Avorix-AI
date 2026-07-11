@@ -100,7 +100,7 @@ export function ContactPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-text-primary">Nidhi Modi</h4>
-                  <p className="text-xs text-text-muted font-medium">Technical Lead</p>
+                  <p className="text-xs text-text-muted font-medium">Co-Founder</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
@@ -119,7 +119,7 @@ export function ContactPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-text-primary">Parth Hindiya</h4>
-                  <p className="text-xs text-text-muted font-medium">Project Lead</p>
+                  <p className="text-xs text-text-muted font-medium">Founder</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
