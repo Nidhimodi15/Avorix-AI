@@ -4,6 +4,7 @@ import { ThemeProvider } from './components/theme-provider';
 import { CustomCursor } from './components/shared/custom-cursor';
 import { Navbar } from './components/layout/navbar';
 import { Footer } from './components/layout/footer';
+import { FloatingCallButton } from './components/shared/floating-call-button';
 import { HomePage } from './pages/home';
 import { DemoPage } from './pages/demo';
 import { FeaturesPage } from './pages/features';
@@ -55,6 +56,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <FloatingCallButton />
         </div>
       </BrowserRouter>
     </ThemeProvider>
