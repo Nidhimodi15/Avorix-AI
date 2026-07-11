@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Send, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Send, CheckCircle2, ArrowRight, Sparkles, Phone } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -124,7 +124,25 @@ export function ContactPage() {
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                   <span className="hidden sm:inline">parth.hindiya@gmail.com</span>
-
+                </div>
+              </a>
+              
+              <h4 className="text-sm font-semibold text-text-muted uppercase tracking-widest px-1 pt-4">Prefer to talk?</h4>
+              
+              {/* Phone */}
+              <a 
+                href="tel:+919664713124" 
+                className="card flex items-center gap-5 group hover:border-emerald-500/50 transition-all duration-300 cursor-pointer !p-5"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-text-primary">Call Us Directly</h4>
+                  <p className="text-xs text-text-muted font-medium">Mon-Sat, 9AM-7PM</p>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-emerald-500 transition-colors shrink-0">
+                  <span className="font-medium">+91 96647 13124</span>
                 </div>
               </a>
             </div>
