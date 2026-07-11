@@ -22,7 +22,7 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 export function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  
+
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema)
   });
@@ -35,14 +35,14 @@ export function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      
+
       if (!res.ok) {
         throw new Error('Failed to send message');
       }
-      
+
       setIsSuccess(true);
       reset();
-      
+
       setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
@@ -61,9 +61,9 @@ export function ContactPage() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl -z-10 -translate-x-1/3 translate-y-1/3" />
 
       <div className="container-wide flex-1 flex flex-col">
-        <motion.div 
-          variants={fadeUp} 
-          initial="hidden" 
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
           animate="visible"
           className="text-center mb-16 max-w-3xl mx-auto"
         >
@@ -76,9 +76,9 @@ export function ContactPage() {
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 max-w-6xl mx-auto w-full flex-1">
-          
+
           {/* Left: Contact Info */}
-          <motion.div 
+          <motion.div
             variants={fadeRight}
             initial="hidden"
             animate="visible"
@@ -88,11 +88,11 @@ export function ContactPage() {
 
             {/* Founder Direct Email Cards */}
             <div className="space-y-3">
-              <h4 className="text-sm font-semibold text-text-muted uppercase tracking-widest px-1">Reach the Founders Directly</h4>
-              
+              <h4 className="text-sm font-semibold text-text-muted uppercase tracking-widest px-1">Reach Our Team Directly</h4>
+
               {/* Nidhi */}
-              <a 
-                href="mailto:nidhimodi970@gmail.com" 
+              <a
+                href="mailto:nidhimodi970@gmail.com"
                 className="card flex items-center gap-5 group hover:border-primary/50 transition-all duration-300 cursor-pointer !p-5"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
@@ -100,7 +100,7 @@ export function ContactPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-text-primary">Nidhi Modi</h4>
-                  <p className="text-xs text-text-muted font-medium">CTO</p>
+                  <p className="text-xs text-text-muted font-medium">Technical Lead</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
@@ -110,8 +110,8 @@ export function ContactPage() {
               </a>
 
               {/* Parth */}
-              <a 
-                href="mailto:parth.hindiya@gmail.com" 
+              <a
+                href="mailto:parth.hindiya@gmail.com"
                 className="card flex items-center gap-5 group hover:border-accent/50 transition-all duration-300 cursor-pointer !p-5"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-accent to-primary flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
@@ -119,19 +119,19 @@ export function ContactPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-semibold text-text-primary">Parth Hindiya</h4>
-                  <p className="text-xs text-text-muted font-medium">CEO</p>
+                  <p className="text-xs text-text-muted font-medium">Project Lead</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                   <span className="hidden sm:inline">parth.hindiya@gmail.com</span>
                 </div>
               </a>
-              
+
               <h4 className="text-sm font-semibold text-text-muted uppercase tracking-widest px-1 pt-4">Prefer to talk?</h4>
-              
+
               {/* Phone */}
-              <a 
-                href="tel:+919664713124" 
+              <a
+                href="tel:+919664713124"
                 className="card flex items-center gap-5 group hover:border-emerald-500/50 transition-all duration-300 cursor-pointer !p-5"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
@@ -149,7 +149,7 @@ export function ContactPage() {
           </motion.div>
 
           {/* Right: Contact Form */}
-          <motion.div 
+          <motion.div
             variants={fadeLeft}
             initial="hidden"
             animate="visible"
@@ -158,7 +158,7 @@ export function ContactPage() {
             <div className="card relative overflow-hidden">
               <AnimatePresence>
                 {isSuccess && (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -178,19 +178,19 @@ export function ContactPage() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="form-label">Full Name *</label>
-                    <input 
-                      {...register('name')} 
-                      className={cn("form-input", errors.name && "border-destructive")} 
+                    <input
+                      {...register('name')}
+                      className={cn("form-input", errors.name && "border-destructive")}
                       placeholder="Jane Doe"
                     />
                     {errors.name && <p className="form-error">{errors.name.message}</p>}
                   </div>
                   <div>
                     <label className="form-label">Email Address *</label>
-                    <input 
-                      {...register('email')} 
+                    <input
+                      {...register('email')}
                       type="email"
-                      className={cn("form-input", errors.email && "border-destructive")} 
+                      className={cn("form-input", errors.email && "border-destructive")}
                       placeholder="jane@example.com"
                     />
                     {errors.email && <p className="form-error">{errors.email.message}</p>}
@@ -200,17 +200,17 @@ export function ContactPage() {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="form-label">Company (Optional)</label>
-                    <input 
-                      {...register('company')} 
-                      className="form-input" 
+                    <input
+                      {...register('company')}
+                      className="form-input"
                       placeholder="Acme Corp"
                     />
                   </div>
                   <div>
                     <label className="form-label">Subject *</label>
-                    <input 
-                      {...register('subject')} 
-                      className={cn("form-input", errors.subject && "border-destructive")} 
+                    <input
+                      {...register('subject')}
+                      className={cn("form-input", errors.subject && "border-destructive")}
                       placeholder="How can we help?"
                     />
                     {errors.subject && <p className="form-error">{errors.subject.message}</p>}
@@ -219,18 +219,18 @@ export function ContactPage() {
 
                 <div>
                   <label className="form-label">Message *</label>
-                  <textarea 
-                    {...register('message')} 
-                    className={cn("form-textarea", errors.message && "border-destructive")} 
+                  <textarea
+                    {...register('message')}
+                    className={cn("form-textarea", errors.message && "border-destructive")}
                     placeholder="Tell us a bit about your needs..."
                     rows={5}
                   />
                   {errors.message && <p className="form-error">{errors.message.message}</p>}
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  size="lg"
                   className="w-full"
                   isLoading={isSubmitting}
                   rightIcon={!isSubmitting ? <Send className="w-5 h-5" /> : undefined}
