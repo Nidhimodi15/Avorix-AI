@@ -224,12 +224,13 @@ app.post('/api/book-demo', async (req, res) => {
       return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
 
-    let meetLink;
+    let meetLink = '';
     try {
       meetLink = await createMeetLink({ firstName, lastName, email, date, time });
     } catch (err) {
       console.error('⚠️  Meet link creation failed:', err.message);
-      return res.status(500).json({ success: false, error: 'Failed to create Google Meet link. Check Calendar API config.' });
+      // DO NOT return 500 here! We still want to send the email!
+      meetLink = ''; 
     }
 
     const recipients = [process.env.OWNER_EMAIL_1, process.env.OWNER_EMAIL_2].filter(Boolean).join(', ');
