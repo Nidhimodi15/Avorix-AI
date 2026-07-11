@@ -36,7 +36,7 @@ export function Footer() {
               </a>
               <a href={SITE_CONFIG.social.instagram} target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-xl flex items-center justify-center bg-bg-surface hover:bg-gradient-to-r hover:text-white transition-all duration-200 text-text-secondary hover:scale-110"
-                style={{}}
+                style={{}}>
                 <Instagram className="w-4 h-4" />
               </a>
             </div>
