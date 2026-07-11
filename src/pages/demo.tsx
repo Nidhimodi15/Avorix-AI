@@ -196,20 +196,24 @@ export function DemoPage() {
 
       const result = await res.json();
 
-      if (result.success && result.meetLink) {
-        setMeetLink(result.meetLink);
+      if (result.success) {
+        if (result.meetLink) setMeetLink(result.meetLink);
+        else setMeetLink('');
+        setIsSubmitting(false);
+        setStep(3);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setMeetLink('');
-        console.warn('No meet link received:', result.error);
+        console.error('Backend returned error:', result.error);
+        alert('Failed to schedule demo: ' + (result.error || 'Unknown error occurred. Please try again.'));
+        setIsSubmitting(false);
       }
     } catch (err) {
-      console.warn('Backend call failed:', err);
+      console.error('Backend call completely failed:', err);
       setMeetLink('');
+      alert('Network error: Could not reach our servers. Please check your connection and try again.');
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
-    setStep(3);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
 
