@@ -199,7 +199,7 @@ export function HeroSection() {
               </div>
 
               {/* Service icon row — 7 equally spaced, icons only on very small screens */}
-              <div className="border-t border-border bg-bg-section px-2 py-2 flex items-center justify-between overflow-x-hidden">
+              <div className="border-t border-border bg-bg-section px-1 sm:px-2 py-2 flex flex-wrap sm:flex-nowrap items-center justify-between overflow-x-hidden">
                 {services.map((s, i) => {
                   const Icon = s.icon;
                   return (
@@ -207,14 +207,14 @@ export function HeroSection() {
                       key={i}
                       onClick={() => setActiveIndex(i)}
                       title={s.label}
-                      className={`flex flex-col items-center gap-0.5 px-1 py-2 rounded-xl transition-all flex-1 min-w-0 ${
+                      className={`flex flex-col items-center gap-0.5 px-0.5 sm:px-1 py-2 rounded-xl transition-all flex-1 min-w-[40px] sm:min-w-0 ${
                         i === activeIndex
                           ? `${s.bg} ${s.color}`
                           : 'text-text-muted hover:text-text-primary hover:bg-bg-card'
                       }`}
                     >
                       <Icon className="w-4 h-4 shrink-0" />
-                      <span className="text-[9px] sm:text-[10px] font-medium text-center leading-tight w-full truncate px-0.5">
+                      <span className="text-[9px] sm:text-[10px] font-medium text-center leading-tight w-full break-words px-0.5">
                         {s.short}
                       </span>
                     </button>
