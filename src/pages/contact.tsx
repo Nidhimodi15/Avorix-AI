@@ -92,7 +92,7 @@ export function ContactPage() {
 
               {/* Nidhi */}
               <a
-                href="mailto:nidhimodi970@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=nidhimodi970@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card flex items-center gap-5 group hover:border-primary/50 transition-all duration-300 cursor-pointer !p-5"
@@ -111,7 +111,7 @@ export function ContactPage() {
 
               {/* Parth */}
               <a
-                href="mailto:parth.hindiya@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=parth.hindiya@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card flex items-center gap-5 group hover:border-accent/50 transition-all duration-300 cursor-pointer !p-5"
