@@ -90,34 +90,34 @@ export function ContactPage() {
             <div className="space-y-3">
               <h4 className="text-sm font-semibold text-text-muted uppercase tracking-widest px-1">Reach Our Team Directly</h4>
 
-              {/* Technical Support */}
+              {/* Nidhi */}
               <a
                 href="mailto:nidhimodi970@gmail.com"
                 className="card flex items-center gap-5 group hover:border-primary/50 transition-all duration-300 cursor-pointer !p-5"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <Mail className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  N
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-text-primary">Technical Support</h4>
-                  <p className="text-xs text-text-muted font-medium">For technical inquiries</p>
+                  <h4 className="font-semibold text-text-primary">Nidhi</h4>
+                  <p className="text-xs text-text-muted font-medium">Technical Consultant</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </a>
 
-              {/* General Inquiries */}
+              {/* Parth */}
               <a
                 href="mailto:parth.hindiya@gmail.com"
                 className="card flex items-center gap-5 group hover:border-accent/50 transition-all duration-300 cursor-pointer !p-5"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-accent to-primary flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <Mail className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-accent to-primary flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+                  P
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-text-primary">General Inquiries</h4>
-                  <p className="text-xs text-text-muted font-medium">For business & sales</p>
+                  <h4 className="font-semibold text-text-primary">Parth</h4>
+                  <p className="text-xs text-text-muted font-medium">Lead Consultant</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
                   <ArrowRight className="w-4 h-4" />
