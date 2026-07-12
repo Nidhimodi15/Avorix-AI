@@ -72,7 +72,7 @@ export function PrivacyPage() {
             <h2 className="text-heading-3 text-text-primary mb-6">7. Contact Us</h2>
             <p>
               If you have questions or comments about this Privacy Policy, please contact us at: <br/>
-              <a href="mailto:parth.hindiya@gmail.com" className="text-primary hover:underline">parth.hindiya@gmail.com</a>
+              <a href="mailto:parth.hindiya@gmail.com" className="text-primary hover:underline">contacting our support team</a>
             </p>
           </div>
         </motion.div>
