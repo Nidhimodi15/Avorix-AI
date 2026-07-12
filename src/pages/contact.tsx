@@ -103,7 +103,8 @@ export function ContactPage() {
                   <p className="text-xs text-text-muted font-medium">Technical Consultant</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
-                  <ArrowRight className="w-4 h-4" />
+                  <Mail className="w-4 h-4" />
+                  <span className="hidden sm:inline">nidhimodi970@gmail.com</span>
                 </div>
               </a>
 
@@ -120,7 +121,8 @@ export function ContactPage() {
                   <p className="text-xs text-text-muted font-medium">Lead Consultant</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
-                  <ArrowRight className="w-4 h-4" />
+                  <Mail className="w-4 h-4" />
+                  <span className="hidden sm:inline">parth.hindiya@gmail.com</span>
                 </div>
               </a>
 
