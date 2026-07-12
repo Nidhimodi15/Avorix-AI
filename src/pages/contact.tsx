@@ -93,6 +93,8 @@ export function ContactPage() {
               {/* Nidhi */}
               <a
                 href="mailto:nidhimodi970@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="card flex items-center gap-5 group hover:border-primary/50 transition-all duration-300 cursor-pointer !p-5"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-primary to-accent flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
@@ -103,14 +105,15 @@ export function ContactPage() {
                   <p className="text-xs text-text-muted font-medium">Technical Consultant</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-primary transition-colors shrink-0">
-                  <Mail className="w-4 h-4" />
-                  <span className="hidden sm:inline">nidhimodi970@gmail.com</span>
+                  <Mail className="w-5 h-5" />
                 </div>
               </a>
 
               {/* Parth */}
               <a
                 href="mailto:parth.hindiya@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="card flex items-center gap-5 group hover:border-accent/50 transition-all duration-300 cursor-pointer !p-5"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-accent to-primary flex items-center justify-center text-white text-lg font-bold shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
@@ -121,8 +124,7 @@ export function ContactPage() {
                   <p className="text-xs text-text-muted font-medium">Lead Consultant</p>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-text-secondary group-hover:text-accent transition-colors shrink-0">
-                  <Mail className="w-4 h-4" />
-                  <span className="hidden sm:inline">parth.hindiya@gmail.com</span>
+                  <Mail className="w-5 h-5" />
                 </div>
               </a>
 
