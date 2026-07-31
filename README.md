@@ -25,12 +25,14 @@
 
 Aeviq AI provides cutting-edge technology solutions designed to reduce costs, multiply leads, and ensure your business is always available. We specialize in transforming operations through automation, advanced artificial intelligence, and bespoke digital experiences.
 
-## ⚡ Our Core Solutions
+## ⚡ Our Core Services
 
-- **🤖 AI Employees & Chatbots:** 24/7 intelligent agents that handle support, capture leads, and slash operational costs by up to 60%.
-- **💻 Custom Web Development:** High-performance, modern, and conversion-optimized websites tailored to your brand identity.
-- **⚙️ Business Automation:** Streamlining repetitive tasks, workflows, and integrations to maximize team efficiency.
-- **📈 Digital Marketing:** Data-driven strategies that scale your online presence and deliver a 3x increase in lead capture.
+- **Premium Website Development:** High-performance, stunning, and conversion-optimized websites tailored to your brand.
+- **Custom Voice Calling Bots:** Intelligent AI voice agents that handle inbound and outbound calls with human-like conversation.
+- **AI Chatbots & Lead Capture:** 24/7 intelligent text agents that handle customer support and capture leads automatically.
+- **Online Booking Systems:** Seamless, automated scheduling and booking platforms tailored for your specific industry.
+- **Business Automation:** End-to-end automation of repetitive tasks and operations to maximize your team's efficiency.
+- **Custom Workflow Integrations:** Connecting your existing software and tools to create a unified, automated business ecosystem.
 
 ## 📊 By The Numbers
 
