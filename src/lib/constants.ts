@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   name: 'Aeviq AI',
   tagline: 'We Build, Automate & Scale Your Business',
   description: 'Aeviq AI is your complete technology partner — offering AI employees, custom website development, business automation, digital marketing, and more.',
-  url: 'https://aeviq.ai',
+  url: 'https://www.theaeviq.co.in',
   email: 'parth.hindiya@gmail.com',
   phone: '',
   social: {
