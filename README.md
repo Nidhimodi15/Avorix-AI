@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="./public/favicon.ico" alt="Aeviq AI Logo" width="80" height="80" />
+  
+  <br/>
+  
+  # Aeviq AI
+  
+  **We Build, Automate & Scale Your Business**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <p>
+    Aeviq AI is your complete technology partner — offering AI employees, custom website development, business automation, digital marketing, and more.
+  </p>
 
-Currently, two official plugins are available:
+  <div>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
+  </div>
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 About Us
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Aeviq AI provides cutting-edge technology solutions designed to reduce costs, multiply leads, and ensure your business is always available. We specialize in transforming operations through automation, advanced artificial intelligence, and bespoke digital experiences.
 
-## Expanding the ESLint configuration
+## ⚡ Our Core Solutions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **🤖 AI Employees & Chatbots:** 24/7 intelligent agents that handle support, capture leads, and slash operational costs by up to 60%.
+- **💻 Custom Web Development:** High-performance, modern, and conversion-optimized websites tailored to your brand identity.
+- **⚙️ Business Automation:** Streamlining repetitive tasks, workflows, and integrations to maximize team efficiency.
+- **📈 Digital Marketing:** Data-driven strategies that scale your online presence and deliver a 3x increase in lead capture.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📊 By The Numbers
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **95%** Response Rate Improvement
+- **3x** More Leads Captured
+- **24/7** Always Available Customer Support
+- **60%** Cost Reduction in Operations
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This repository contains the front-end application for the Aeviq AI platform, meticulously crafted with:
+- **React 18** for a robust component architecture.
+- **TypeScript** for end-to-end type safety.
+- **Tailwind CSS** for rapid, modern, and responsive UI design.
+- **Framer Motion** for fluid animations and transitions.
+- **Lucide React** for beautiful, consistent iconography.
+- **Vite** for lightning-fast build tooling.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚦 Getting Started
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+To get a local copy up and running, follow these simple steps:
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/yourusername/aeviq-ai-frontend.git
+   ```
+2. Install dependencies
+   ```sh
+   npm install
+   ```
+3. Start the development server
+   ```sh
+   npm run dev
+   ```
+4. Open `http://localhost:5173` to view it in your browser.
+
+## 🤝 Get in Touch
+
+Ready to transform your business? Reach out to us:
+- **Website:** [https://aeviq.ai](https://aeviq.ai)
+- **Contact:** parth.hindiya@gmail.com
+- **LinkedIn:** [Aeviq AI](https://linkedin.com/company/aeviq-ai)
+
+---
+
+<div align="center">
+  <p>Built with ❤️ by the Aeviq AI Team.</p>
+</div>
