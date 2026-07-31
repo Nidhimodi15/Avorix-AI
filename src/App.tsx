@@ -18,6 +18,8 @@ import { FAQPage } from './pages/faq';
 import { CaseStudiesPage } from './pages/case-studies';
 import { PrivacyPage } from './pages/privacy';
 import { TermsPage } from './pages/terms';
+import { BlogIndexPage } from './pages/blog-index';
+import { BlogPostPage } from './pages/blog-post';
 
 // ScrollToTop component to handle routing scroll behavior
 function ScrollToTop() {
@@ -51,6 +53,8 @@ function App() {
 
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/case-studies" element={<CaseStudiesPage />} />
+              <Route path="/blog" element={<BlogIndexPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/terms" element={<TermsPage />} />
             </Routes>

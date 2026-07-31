@@ -3,6 +3,7 @@ export const NAV_LINKS = [
   { label: 'Solutions', href: '/solutions' },
   { label: 'Industries', href: '/industries' },
   { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Contact Us', href: '/contact' },
 ];
