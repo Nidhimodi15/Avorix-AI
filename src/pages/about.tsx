@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Target, Heart, Shield, Zap } from 'lucide-react';
 import { SectionHeading } from '@/components/shared/section-heading';
@@ -37,6 +38,10 @@ const team = [
 export function AboutPage() {
   return (
     <div className="pt-32 flex flex-col min-h-screen">
+      <Helmet>
+        <title>About Us | Aeviq AI Automation Agency</title>
+        <meta name="description" content="Learn about Aeviq AI's mission to transform businesses through premium web development and intelligent automation." />
+      </Helmet>
       {/* Hero Section */}
       <section className="section pb-12 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-hero -z-10" />

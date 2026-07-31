@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Calendar as CalendarIcon, Clock, Video, Loader2, ArrowRight } from 'lucide-react';
 import { useForm } from 'react-hook-form';
@@ -219,6 +220,10 @@ export function DemoPage() {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-bg-surface relative overflow-hidden">
+      <Helmet>
+        <title>Book a Demo | Aeviq AI Automation Services</title>
+        <meta name="description" content="Schedule a free consultation and demo to see how Aeviq AI can automate your business and increase your revenue." />
+      </Helmet>
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-primary/10 to-transparent blur-3xl -z-10 rounded-bl-full" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-accent/10 to-transparent blur-3xl -z-10 rounded-tr-full" />

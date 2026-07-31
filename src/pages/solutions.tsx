@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Headphones, Megaphone, TrendingUp, CheckCircle2, Globe, Workflow, MessageCircle, Search } from 'lucide-react';
 import { CTABanner } from '@/components/shared/cta-banner';
@@ -110,6 +111,10 @@ const solutions = [
 export function SolutionsPage() {
   return (
     <div className="pt-32 flex flex-col min-h-screen">
+      <Helmet>
+        <title>Our Solutions | AI Voice Agents & Business Automation</title>
+        <meta name="description" content="Explore our core services: premium website development, custom voice calling bots, online booking systems, and complete workflow automation." />
+      </Helmet>
       {/* Hero Section */}
       <section className="section pb-12 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-hero -z-10" />

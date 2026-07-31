@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { features } from '@/data/features';
 import { CTABanner } from '@/components/shared/cta-banner';
@@ -9,6 +10,10 @@ import { cn } from '@/lib/utils';
 export function FeaturesPage() {
   return (
     <div className="pt-32 flex flex-col min-h-screen">
+      <Helmet>
+        <title>Features | High-Performance Web & AI Solutions</title>
+        <meta name="description" content="Discover the powerful features of Aeviq AI's solutions, designed to capture leads, reduce costs, and operate 24/7." />
+      </Helmet>
       {/* Hero Section */}
       <section className="section pb-12 relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-hero -z-10" />
