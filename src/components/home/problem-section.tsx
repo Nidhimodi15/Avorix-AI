@@ -52,11 +52,11 @@ export function ProblemSection() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-text-secondary mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bg-surface border border-border text-sm text-text-secondary mb-6">
                 <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />
                 The Problem
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-text-primary mb-6 leading-tight">
                 Manual support is <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-destructive to-orange-500">bleeding revenue.</span>
               </h2>
@@ -77,12 +77,12 @@ export function ProblemSection() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
-                  className="bg-bg-surface/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:bg-bg-surface transition-colors duration-500"
+                  className="bg-bg-surface/50 backdrop-blur-xl border border-border/50 rounded-3xl p-8 hover:bg-bg-surface transition-colors duration-500"
                 >
                   <div className={`w-16 h-16 rounded-2xl ${problem.bg} ${problem.border} border flex items-center justify-center mb-6`}>
                     <Icon className={`w-8 h-8 ${problem.color}`} />
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-3">{problem.title}</h3>
+                  <h3 className="text-2xl font-medium text-text-primary mb-3">{problem.title}</h3>
                   <p className="text-text-secondary text-lg font-light leading-relaxed">
                     {problem.description}
                   </p>
