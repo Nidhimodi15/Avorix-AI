@@ -1,75 +1,97 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
+import { Clock, TrendingDown, Users, Database } from 'lucide-react';
+import { fadeUp, fadeLeft } from '@/lib/animations';
 
 const problems = [
   {
-    title: 'Missed Leads.',
-    description: 'Leads contact you after hours and go to competitors who respond faster.',
+    icon: Clock,
+    title: 'Missed Leads',
+    description: 'Leads contact you after hours and sign with competitors before morning.',
+    color: 'text-orange-500',
+    bg: 'bg-orange-500/10',
+    border: 'border-orange-500/20'
   },
   {
-    title: 'Slow Responses.',
-    description: 'Customers get frustrated waiting hours for simple answers.',
+    icon: TrendingDown,
+    title: 'Lost Revenue',
+    description: 'Every 5-minute delay in response drops conversion rates by 80%.',
+    color: 'text-red-500',
+    bg: 'bg-red-500/10',
+    border: 'border-red-500/20'
   },
   {
-    title: 'Lost Revenue.',
-    description: 'Unanswered queries turn into lost sales opportunities.',
+    icon: Users,
+    title: 'Staff Overload',
+    description: 'Your highly-paid team wastes hours answering the same 5 questions.',
+    color: 'text-blue-500',
+    bg: 'bg-blue-500/10',
+    border: 'border-blue-500/20'
   },
   {
-    title: 'Staff Overload.',
-    description: 'Your team wastes time answering the same repetitive questions.',
-  },
-  {
-    title: 'Poor Follow-Ups.',
-    description: 'Potential customers fall through the cracks without consistent follow-up.',
-  },
-  {
-    title: 'Scattered Data.',
-    description: 'Lead information is lost in notebooks instead of instantly syncing to your CRM.',
+    icon: Database,
+    title: 'Scattered Data',
+    description: 'Customer info is lost in notebooks instead of syncing to your CRM.',
+    color: 'text-purple-500',
+    bg: 'bg-purple-500/10',
+    border: 'border-purple-500/20'
   }
 ];
 
 export function ProblemSection() {
   return (
-    <section className="section bg-bg">
-      <div className="container max-w-4xl mx-auto">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="mb-16 md:mb-24"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6">
-            The hidden cost of <br className="hidden md:block"/> manual communication.
-          </h2>
-          <p className="text-xl text-text-secondary font-light max-w-2xl">
-            Relying on humans alone for customer support isn't just slow. It is actively costing you revenue, reputation, and scale.
-          </p>
-        </motion.div>
-
-        <motion.div 
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-col"
-        >
-          {problems.map((problem, index) => (
-            <motion.div 
-              key={index} 
-              variants={staggerItem}
-              className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-8 border-b border-white/5 transition-colors hover:border-white/20"
+    <section className="section bg-bg relative">
+      <div className="container">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 relative items-start">
+          
+          {/* Sticky Left Column: Massive Visual Statement */}
+          <div className="lg:w-1/2 lg:sticky lg:top-32 lg:h-[calc(100vh-16rem)] flex flex-col justify-center">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
             >
-              <h3 className="text-2xl font-medium text-white/50 group-hover:text-white transition-colors duration-300 md:w-1/3 shrink-0">
-                {problem.title}
-              </h3>
-              <p className="text-lg text-text-secondary/50 group-hover:text-text-secondary transition-colors duration-300 font-light">
-                {problem.description}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-text-secondary mb-6">
+                <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />
+                The Problem
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-tight">
+                Manual support is <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-destructive to-orange-500">bleeding revenue.</span>
+              </h2>
+              <p className="text-lg text-text-secondary font-light max-w-md">
+                In a hyper-competitive market, forcing customers to wait for human replies is a guaranteed way to lose them.
               </p>
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+
+          {/* Scrolling Right Column: Highly Visual Cards */}
+          <div className="lg:w-1/2 flex flex-col gap-8 pb-32 pt-16">
+            {problems.map((problem, index) => {
+              const Icon = problem.icon;
+              return (
+                <motion.div 
+                  key={index}
+                  variants={fadeLeft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="bg-bg-surface/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:bg-bg-surface transition-colors duration-500"
+                >
+                  <div className={`w-16 h-16 rounded-2xl ${problem.bg} ${problem.border} border flex items-center justify-center mb-6`}>
+                    <Icon className={`w-8 h-8 ${problem.color}`} />
+                  </div>
+                  <h3 className="text-2xl font-medium text-white mb-3">{problem.title}</h3>
+                  <p className="text-text-secondary text-lg font-light leading-relaxed">
+                    {problem.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+          
+        </div>
       </div>
     </section>
   );
