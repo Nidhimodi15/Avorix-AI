@@ -1,83 +1,74 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, TrendingDown, Users, Frown, XCircle, Database } from 'lucide-react';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
-import { SectionHeading } from '../shared/section-heading';
 
 const problems = [
   {
-    icon: Clock,
-    title: 'Missed Leads',
+    title: 'Missed Leads.',
     description: 'Leads contact you after hours and go to competitors who respond faster.',
   },
   {
-    icon: Frown,
-    title: 'Slow Responses',
+    title: 'Slow Responses.',
     description: 'Customers get frustrated waiting hours for simple answers.',
   },
   {
-    icon: TrendingDown,
-    title: 'Lost Revenue',
+    title: 'Lost Revenue.',
     description: 'Unanswered queries turn into lost sales opportunities.',
   },
   {
-    icon: Users,
-    title: 'Staff Overload',
+    title: 'Staff Overload.',
     description: 'Your team wastes time answering the same repetitive questions.',
   },
   {
-    icon: XCircle,
-    title: 'Poor Follow-Ups',
+    title: 'Poor Follow-Ups.',
     description: 'Potential customers fall through the cracks without consistent follow-up.',
   },
   {
-    icon: Database,
-    title: 'Scattered Data',
+    title: 'Scattered Data.',
     description: 'Lead information is lost in notebooks instead of instantly syncing to your CRM.',
   }
 ];
 
 export function ProblemSection() {
   return (
-    <section className="section bg-bg-surface relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-destructive/5 blur-[120px] rounded-full pointer-events-none" />
-      
-      <div className="container relative z-10">
-        <SectionHeading
-          badge="Sound Familiar?"
-          title="The cost of manual communication"
-          description="Relying on humans alone for customer communication is costing you leads, revenue, and satisfaction."
-        />
+    <section className="section bg-bg">
+      <div className="container max-w-4xl mx-auto">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="mb-16 md:mb-24"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6">
+            The hidden cost of <br className="hidden md:block"/> manual communication.
+          </h2>
+          <p className="text-xl text-text-secondary font-light max-w-2xl">
+            Relying on humans alone for customer support isn't just slow. It is actively costing you revenue, reputation, and scale.
+          </p>
+        </motion.div>
 
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+          className="flex flex-col"
         >
-          {problems.map((problem, index) => {
-            const Icon = problem.icon;
-            return (
-              <motion.div 
-                key={index} 
-                variants={staggerItem}
-                className="group relative bg-bg p-8 rounded-2xl border border-border/50 hover:border-destructive/30 transition-all duration-500 overflow-hidden"
-              >
-                {/* Hover gradient effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-destructive/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-bg-surface border border-border/50 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-destructive/20 transition-all duration-500 shadow-sm">
-                    <Icon className="w-6 h-6 text-destructive group-hover:text-destructive/80 transition-colors" />
-                  </div>
-                  <h3 className="text-heading-4 mb-3 text-text-primary group-hover:text-white transition-colors">{problem.title}</h3>
-                  <p className="text-body-md text-text-secondary leading-relaxed">{problem.description}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+          {problems.map((problem, index) => (
+            <motion.div 
+              key={index} 
+              variants={staggerItem}
+              className="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-8 border-b border-white/5 transition-colors hover:border-white/20"
+            >
+              <h3 className="text-2xl font-medium text-white/50 group-hover:text-white transition-colors duration-300 md:w-1/3 shrink-0">
+                {problem.title}
+              </h3>
+              <p className="text-lg text-text-secondary/50 group-hover:text-text-secondary transition-colors duration-300 font-light">
+                {problem.description}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
