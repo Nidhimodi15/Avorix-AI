@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { STATS } from '@/lib/constants';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 
@@ -93,6 +95,25 @@ export function ResultsROI() {
               />
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Attribution + CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6"
+        >
+          <p className="text-xs text-white/40 max-w-md text-center sm:text-left">
+            * Figures represent averages reported across active Aeviq AI clients. Individual results vary by industry and implementation.
+          </p>
+          <Link
+            to="/case-studies"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 text-white/80 hover:text-white hover:border-white/40 hover:bg-white/10 text-sm font-semibold transition-all duration-200 shrink-0"
+          >
+            View Case Studies <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
       </div>
     </section>

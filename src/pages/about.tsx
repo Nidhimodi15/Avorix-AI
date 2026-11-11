@@ -60,41 +60,47 @@ export function AboutPage() {
       {/* Mission Section */}
       <section className="py-20 bg-bg-section border-y border-border/50">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-2xl">
             <motion.div
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="text-heading-2 mb-6">Our Story</h2>
-              <div className="space-y-4 text-body-lg text-text-secondary">
-                <p>
-                  Aeviq AI was born out of a simple frustration: why is it so hard for businesses to automate their workflows and scale efficiently?
+              <h2 className="text-heading-2 mb-8">Our Story</h2>
+
+              {/* Pull Quote */}
+              <blockquote
+                className="relative pl-6 mb-8 border-l-4 rounded-r-xl py-4 pr-6"
+                style={{
+                  borderColor: 'var(--primary)',
+                  background: 'var(--primary-light)',
+                }}
+              >
+                <p className="text-lg font-semibold text-text-primary leading-relaxed italic">
+                  "Why is it so hard for small businesses to access the same automation tools that Fortune 500 companies take for granted?"
                 </p>
-                <p>
-                  We saw local businesses losing leads because of outdated tech. We saw teams drowning in repetitive queries and manual data entry. We knew there had to be a better way.
-                </p>
-                <p>
-                  So we built a complete technology partner. Not just another software agency, but a dynamic team that provides AI chatbots, custom web development, digital marketing, and full business automation under one roof.
-                </p>
-                <p className="font-semibold text-text-primary">
-                  Today, Aeviq AI powers digital transformations for businesses globally.
-                </p>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              className="relative h-[400px] rounded-3xl overflow-hidden bg-bg border border-border flex items-center justify-center p-12"
-            >
-              <div className="absolute inset-0 bg-grid opacity-30" />
-              <div className="relative z-10 text-center">
-                <div className="text-display-xl font-bold text-primary mb-2">10x</div>
-                <p className="text-heading-4 text-text-secondary">Average Business Growth</p>
+                <footer className="mt-3 text-sm text-text-muted not-italic">— The question that started Aeviq AI</footer>
+              </blockquote>
+
+              {/* Scannable points */}
+              <div className="space-y-5">
+                {[
+                  'We saw local businesses losing leads because of outdated tech — missed WhatsApp messages, no follow-ups, manual invoices.',
+                  'We saw teams drowning in repetitive queries and manual data entry instead of focusing on what matters.',
+                  'So we built a complete technology partner: AI chatbots, custom web development, digital marketing, and full automation — under one roof.',
+                  'Today, Aeviq AI powers digital transformations for businesses across India and beyond.',
+                ].map((point, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div
+                      className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                      style={{ background: 'var(--accent-light)' }}
+                    >
+                      <div className="w-2 h-2 rounded-full" style={{ background: 'var(--accent)' }} />
+                    </div>
+                    <p className="text-body-lg text-text-secondary leading-relaxed">{point}</p>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>

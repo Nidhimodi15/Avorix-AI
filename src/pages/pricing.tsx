@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,26 @@ import { CTABanner } from '@/components/shared/cta-banner';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 
+// INR conversion: approximate ₹84 per $1, rounded for clean UX
+const USD_TO_INR = 84;
+const INR_PRICES: Record<string, number | null> = {
+  starter: 4100,
+  professional: 12500,
+  enterprise: null,
+};
+
 export function PricingPage() {
+  const [currency, setCurrency] = useState<'INR' | 'USD'>('INR');
+
+  const formatPrice = (plan: typeof pricingPlans[0]) => {
+    if (plan.price === null) return null;
+    if (currency === 'INR') {
+      const inr = INR_PRICES[plan.id];
+      return inr !== undefined && inr !== null ? `₹${inr.toLocaleString('en-IN')}` : null;
+    }
+    return `$${plan.price}`;
+  };
+
   return (
     <div className="pt-32 flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -20,9 +39,32 @@ export function PricingPage() {
             <h1 className="text-display-lg mb-6">
               Simple, transparent <span className="text-gradient">pricing.</span>
             </h1>
-            <p className="text-body-xl text-text-secondary">
+            <p className="text-body-xl text-text-secondary mb-8">
               Start with a 14-day free trial. Upgrade when you need more power. No hidden fees or surprise charges.
             </p>
+
+            {/* Currency Toggle */}
+            <div className="inline-flex items-center gap-1 p-1 rounded-full border border-border bg-bg-surface">
+              {(['INR', 'USD'] as const).map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setCurrency(c)}
+                  className={cn(
+                    'px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200',
+                    currency === c
+                      ? 'bg-primary text-white shadow-sm'
+                      : 'text-text-secondary hover:text-text-primary'
+                  )}
+                >
+                  {c === 'INR' ? '₹ INR' : '$ USD'}
+                </button>
+              ))}
+            </div>
+            {currency === 'INR' && (
+              <p className="text-xs text-text-muted mt-3">
+                Prices shown in Indian Rupees (INR). Exchange rate approx. ₹84 / $1.
+              </p>
+            )}
           </motion.div>
         </div>
       </section>
@@ -38,52 +80,63 @@ export function PricingPage() {
             animate="visible"
             className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
-            {pricingPlans.map((plan) => (
-              <motion.div 
-                key={plan.id}
-                variants={staggerItem}
-                className={cn(
-                  "pricing-card h-full flex flex-col",
-                  plan.featured ? "featured scale-105 z-10 bg-bg" : "bg-bg-surface/50 backdrop-blur-sm"
-                )}
-              >
-                <div>
-                  <h3 className="text-heading-3 mb-2">{plan.name}</h3>
-                  <p className="text-body-sm text-text-secondary h-10 mb-6">{plan.description}</p>
-                  
-                  <div className="mb-8">
-                    {plan.price !== null ? (
-                      <div className="flex items-baseline">
-                        <span className="text-4xl font-bold text-text-primary">${plan.price}</span>
-                        <span className="text-text-secondary ml-1">{plan.period}</span>
-                      </div>
-                    ) : (
-                      <div className="text-4xl font-bold text-text-primary">Custom</div>
-                    )}
+            {pricingPlans.map((plan) => {
+              const displayPrice = formatPrice(plan);
+              return (
+                <motion.div 
+                  key={plan.id}
+                  variants={staggerItem}
+                  className={cn(
+                    "pricing-card h-full flex flex-col",
+                    plan.featured ? "featured scale-105 z-10 bg-bg" : "bg-bg-surface/50 backdrop-blur-sm"
+                  )}
+                >
+                  <div>
+                    <h3 className="text-heading-3 mb-2">{plan.name}</h3>
+                    <p className="text-body-sm text-text-secondary h-10 mb-6">{plan.description}</p>
+                    
+                    <div className="mb-8">
+                      {plan.price !== null ? (
+                        <div className="flex items-baseline gap-1">
+                          <motion.span
+                            key={`${plan.id}-${currency}`}
+                            initial={{ opacity: 0, y: -6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-4xl font-bold text-text-primary"
+                          >
+                            {displayPrice}
+                          </motion.span>
+                          <span className="text-text-secondary">{plan.period}</span>
+                        </div>
+                      ) : (
+                        <div className="text-4xl font-bold text-text-primary">Custom</div>
+                      )}
+                    </div>
+                    
+                    <Link to={plan.price !== null ? "/demo" : "/contact"} className="block w-full">
+                      <Button 
+                        variant={plan.featured ? "primary" : "outline"} 
+                        className="w-full"
+                        rightIcon={!plan.featured ? <ArrowRight className="w-4 h-4" /> : undefined}
+                      >
+                        {plan.cta}
+                      </Button>
+                    </Link>
                   </div>
                   
-                  <Link to={plan.price !== null ? "/demo" : "/contact"} className="block w-full">
-                    <Button 
-                      variant={plan.featured ? "primary" : "outline"} 
-                      className="w-full"
-                      rightIcon={!plan.featured ? <ArrowRight className="w-4 h-4" /> : undefined}
-                    >
-                      {plan.cta}
-                    </Button>
-                  </Link>
-                </div>
-                
-                <div className="pricing-features flex-1 mt-8 pt-8 border-t border-border">
-                  <h4 className="text-sm font-semibold text-text-primary uppercase tracking-wide mb-4">What's included:</h4>
-                  {plan.features.map((feature, i) => (
-                    <div key={i} className="pricing-feature">
-                      <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                  <div className="pricing-features flex-1 mt-8 pt-8 border-t border-border">
+                    <h4 className="text-sm font-semibold text-text-primary uppercase tracking-wide mb-4">What's included:</h4>
+                    {plan.features.map((feature, i) => (
+                      <div key={i} className="pricing-feature">
+                        <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>

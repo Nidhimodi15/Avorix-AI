@@ -274,14 +274,15 @@ export function DemoPage() {
                   ))}
                 </ul>
                 
-                <div className="p-4 bg-bg-surface rounded-xl border border-border">
-                  <p className="text-sm italic text-text-secondary mb-3">
-                    "The demo call was incredibly insightful. They didn't just show the software, they showed us how to completely rethink our customer acquisition strategy."
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-[10px] font-bold text-primary">SM</div>
-                    <span className="text-xs font-semibold text-text-primary">Sarah M., Meridian Health</span>
-                  </div>
+                <div className="p-4 bg-bg-surface rounded-xl border border-border space-y-3">
+                  <p className="text-xs font-bold uppercase tracking-widest text-text-muted">In this 30-min call you will</p>
+                  {[
+                    '✦ See a live AI bot handle real customer queries',
+                    '✦ Get a custom ROI estimate for your business',
+                    '✦ Walk away with a clear action plan — no pressure',
+                  ].map((line, i) => (
+                    <p key={i} className="text-sm text-text-secondary">{line}</p>
+                  ))}
                 </div>
               </motion.div>
             )}

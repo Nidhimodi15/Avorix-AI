@@ -10,11 +10,11 @@ import { cn } from '@/lib/utils';
 const blogPosts = [
   {
     id: 1,
-    title: 'How AI is Reshaping WhatsApp Commerce in 2024',
+    title: 'How AI is Reshaping WhatsApp Commerce in 2026',
     excerpt: 'Discover the latest trends in conversational commerce and how businesses are using AI to drive sales directly within WhatsApp.',
     category: 'Trends',
-    date: 'Oct 15, 2024',
-    author: 'Sarah Chen',
+    date: 'Nov 01, 2026',
+    author: 'Parth & Nidhi',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop'
   },
@@ -23,8 +23,8 @@ const blogPosts = [
     title: 'The Ultimate Guide to Automating Customer Support',
     excerpt: 'A step-by-step framework for implementing AI support without losing the human touch or frustrating your customers.',
     category: 'Guide',
-    date: 'Oct 02, 2024',
-    author: 'Alex Rivera',
+    date: 'Oct 20, 2026',
+    author: 'Parth & Nidhi',
     readTime: '8 min read',
     image: 'https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1000&auto=format&fit=crop'
   },
@@ -33,8 +33,8 @@ const blogPosts = [
     title: 'Why Real Estate Agents are Ditching Email for WhatsApp',
     excerpt: 'How top-performing realtors are using automated WhatsApp sequences to qualify leads and book more property viewings.',
     category: 'Industry',
-    date: 'Sep 28, 2024',
-    author: 'Marcus Johnson',
+    date: 'Oct 05, 2026',
+    author: 'Parth & Nidhi',
     readTime: '4 min read',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop'
   },
@@ -43,19 +43,19 @@ const blogPosts = [
     title: '5 WhatsApp Broadcast Templates with 90%+ Open Rates',
     excerpt: 'Steal these proven message templates to re-engage dead leads and drive instant conversions for your next promotion.',
     category: 'Marketing',
-    date: 'Sep 15, 2024',
-    author: 'Priya Patel',
+    date: 'Sep 18, 2026',
+    author: 'Parth & Nidhi',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 5,
-    title: 'Product Update: Enhanced CRM Integrations',
-    excerpt: 'We\'ve just released deep two-way sync for Salesforce, HubSpot, and Pipedrive. Here\'s everything you need to know.',
-    category: 'Product',
-    date: 'Sep 05, 2024',
-    author: 'Sarah Chen',
-    readTime: '3 min read',
+    title: 'How Indian SMBs Are Saving 20 Hours/Week with Automation',
+    excerpt: 'Real businesses across Gujarat and Maharashtra share how they automated WhatsApp, invoicing, and follow-ups to reclaim their time.',
+    category: 'Case Study',
+    date: 'Sep 02, 2026',
+    author: 'Parth & Nidhi',
+    readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop'
   },
   {
@@ -63,8 +63,8 @@ const blogPosts = [
     title: 'Measuring ROI: How to Track WhatsApp Campaign Success',
     excerpt: 'Stop guessing. Learn the exact metrics you need to track to prove the ROI of your conversational marketing efforts.',
     category: 'Analytics',
-    date: 'Aug 22, 2024',
-    author: 'Alex Rivera',
+    date: 'Aug 15, 2026',
+    author: 'Parth & Nidhi',
     readTime: '7 min read',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
   }

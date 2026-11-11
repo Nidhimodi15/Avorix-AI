@@ -121,15 +121,27 @@ export function Navbar() {
         </div>
         
         <nav className="flex flex-col gap-2 mb-8 flex-1 overflow-y-auto">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              className="mobile-menu-link"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = location.pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                to={link.href}
+                className={cn(
+                  'mobile-menu-link relative',
+                  isActive && 'text-primary bg-primary/8 font-bold'
+                )}
+              >
+                {isActive && (
+                  <span
+                    className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r-full"
+                    style={{ background: 'var(--primary)' }}
+                  />
+                )}
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
         
         <div className="flex flex-col gap-4 mt-auto">

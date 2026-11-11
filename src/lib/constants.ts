@@ -18,7 +18,7 @@ export const SITE_CONFIG = {
   social: {
     twitter: 'https://twitter.com/aeviqai',
     linkedin: 'https://linkedin.com/company/aeviq-ai',
-    instagram: 'https://instagram.com/aeviqai',
+    instagram: 'https://www.instagram.com/aeviq_ai/',
   },
 };
 
