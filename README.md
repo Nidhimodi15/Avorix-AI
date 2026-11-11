@@ -79,7 +79,7 @@ To get a local copy up and running, follow these simple steps:
 ## 🤝 Get in Touch
 
 Ready to transform your business? Reach out to us:
-- **Website:** [[https://aeviq.ai](https://www.theaeviq.co.in/)]
+- **Website:** [[https://theaeviq.co.in](https://www.theaeviq.co.in/)]
 - **Contact:** parth.hindiya@gmail.com
 - **LinkedIn:** [Aeviq AI](https://linkedin.com/company/aeviq-ai)
 
